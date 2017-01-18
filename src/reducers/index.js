@@ -1,7 +1,7 @@
 let initialState = {
   text: 'Hello'
 }
-export default function myApp  (state = initialState, action) {
+export default function myApp (state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_TEXT':
       return {
