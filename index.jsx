@@ -68,9 +68,6 @@ class Change extends React.Component{
 }
 //组件 App
 class App extends React.Component{
-  constructor(props) {
-    super(props);
-  }
   render(){
     //下面connect方法把state和action给props了
     const { actions,text } = this.props
