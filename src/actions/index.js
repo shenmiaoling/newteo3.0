@@ -1,11 +1,11 @@
 
-export const changeText()=>({
+export function changeText(){
   return {
     type: 'CHANGE_TEXT'
   }
-})
-export const buttonClick()=>({
+}
+export function buttonClick(){
   return {
     type: 'BUTTON_CLICK'
   }
-})
+}
