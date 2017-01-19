@@ -10,14 +10,14 @@ class App extends React.Component {
     const { actions,text } = this.props
     return (
       <div>
-        <Hello actions = {actions} text={text}/>
-        {
-          children && React.cloneElement(children, {
+      {
+        React.Children.map(this.props.children, (e) => {
+          return React.cloneElement(e, {
             actions: actions,
             text: text
           })
-        }
-        <Change actions = {actions}/>
+        })
+      }
       </div>
       )
   }

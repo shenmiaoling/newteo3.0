@@ -8598,7 +8598,7 @@ webpackJsonp([0],[
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reducers = __webpack_require__(557);
+	var _reducers = __webpack_require__(580);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -10997,6 +10997,36 @@ webpackJsonp([0],[
 	    type: 'BUTTON_CLICK'
 	  };
 	}
+
+/***/ },
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _redux = __webpack_require__(535);
+
+	var _reactRouterRedux = __webpack_require__(529);
+
+	var _reducers = __webpack_require__(557);
+
+	var _reducers2 = _interopRequireDefault(_reducers);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var rootReducer = (0, _redux.combineReducers)({
+	  reducers: _reducers2.default,
+	  routing: _reactRouterRedux.routerReducer
+	});
+
+	exports.default = rootReducer;
 
 /***/ }
 ]);
