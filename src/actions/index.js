@@ -1,4 +1,3 @@
-
 export function changeText(){
   return {
     type: 'CHANGE_TEXT'
