@@ -28,7 +28,7 @@ webpackJsonp([0],[
 
 	var store = (0, _store2.default)();
 	var history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.browserHistory, store);
-	console.log(store);
+
 	(0, _reactDom.render)(_react2.default.createElement(_Root2.default, { store: store, history: history }), document.getElementById('root'));
 
 /***/ },
@@ -9692,7 +9692,6 @@ webpackJsonp([0],[
 	  reducers: _reducers2.default,
 	  routing: _reactRouterRedux.routerReducer
 	});
-
 	exports.default = rootReducer;
 
 /***/ },
@@ -10895,20 +10894,20 @@ webpackJsonp([0],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Home = function Home(location, callback) {
-	  __webpack_require__.e/* nsure */(1, function (require) {
+	  __webpack_require__.e/* nsure */(1/* empty */, function (require) {
 	    callback(null, __webpack_require__(578).default);
 	  });
 	};
 
 	var Contact = function Contact(location, callback) {
 	  __webpack_require__.e/* nsure */(2, function (require) {
-	    callback(null, __webpack_require__(580).default);
+	    callback(null, __webpack_require__(585).default);
 	  });
 	};
 
 	var NotFound = function NotFound(location, callback) {
 	  __webpack_require__.e/* nsure */(3, function (require) {
-	    callback(null, __webpack_require__(581).default);
+	    callback(null, __webpack_require__(586).default);
 	  });
 	};
 
@@ -10962,32 +10961,26 @@ webpackJsonp([0],[
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	  }
 
 	  _createClass(App, [{
 	    key: 'render',
-
-	    // constructor(props) {
-	    //   super(props);
-	    // }
 	    value: function render() {
 	      var _props = this.props,
 	          actions = _props.actions,
-	          text = _props.text;
-	      // console.log(this.props);
+	          text = _props.text,
+	          children = _props.children;
 
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.Children.map(this.props.children, function (e) {
-	          return _react2.default.cloneElement(e, {
-	            actions: actions,
-	            text: text
-	          });
+	        children && _react2.default.cloneElement(children, {
+	          actions: actions,
+	          text: text
 	        })
 	      );
 	    }
@@ -10997,7 +10990,8 @@ webpackJsonp([0],[
 	}(_react2.default.Component);
 
 	function mapStateToProps(state) {
-	  return { text: state.text };
+
+	  return { text: state.reducers.text };
 	}
 	//mapDispatchToProps的作用是把store中的dispatch方法注入给组件
 	function mapDispatchToProps(dispatch) {
@@ -11024,6 +11018,7 @@ webpackJsonp([0],[
 	    type: 'CHANGE_TEXT'
 	  };
 	}
+
 	function buttonClick() {
 	  return {
 	    type: 'BUTTON_CLICK'

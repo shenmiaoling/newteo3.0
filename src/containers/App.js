@@ -3,28 +3,26 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from '../actions'
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+  }
   render(){
-    const { actions,text } = this.props
-    // console.log(this.props);
+    const { actions,text,children } = this.props
     return (
       <div>
       {
-        React.Children.map(this.props.children, (e) => {
-          return React.cloneElement(e, {
+          children && React.cloneElement(children, {
             actions: actions,
             text: text
           })
-        })
-      }
+        }
       </div>
       )
   }
 }
 function mapStateToProps(state) {
-  return { text: state.text }
+
+  return { text: state.reducers.text }
 }
 //mapDispatchToProps的作用是把store中的dispatch方法注入给组件
 function mapDispatchToProps(dispatch) {
