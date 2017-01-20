@@ -41,10 +41,13 @@ webpackJsonp([1],{
 	  _createClass(Topbar, [{
 	    key: 'render',
 	    value: function render() {
+	      var text = this.props.text;
+
+	      console.log(this.props);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'Topbar' },
-	        _react2.default.createElement(_Hello2.default, null),
+	        _react2.default.createElement(_Hello2.default, { text: text }),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
 	          { to: '/contact' },
@@ -114,12 +117,12 @@ webpackJsonp([1],{
 	    key: 'render',
 	    value: function render() {
 	      var text = this.props.text;
+	      // console.log(this.props)
 
 	      return _react2.default.createElement(
 	        'h1',
 	        {
 	          onClick: this.handleClick },
-	        ' ',
 	        text,
 	        ' '
 	      );

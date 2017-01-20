@@ -3,11 +3,16 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from '../actions'
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render(){
+<<<<<<< HEAD
     const { children,actions,text } = this.props
+=======
+    const { actions,text } = this.props
+    // console.log(this.props);
+>>>>>>> a42fb2f97113964a3ab81be2db7bd19eab9a5f69
     return (
       <div>
       {

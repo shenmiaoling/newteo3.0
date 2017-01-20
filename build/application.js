@@ -28,7 +28,7 @@ webpackJsonp([0],[
 
 	var store = (0, _store2.default)();
 	var history = (0, _reactRouterRedux.syncHistoryWithStore)(_reactRouter.browserHistory, store);
-
+	console.log(store);
 	(0, _reactDom.render)(_react2.default.createElement(_Root2.default, { store: store, history: history }), document.getElementById('root'));
 
 /***/ },
@@ -10962,19 +10962,24 @@ webpackJsonp([0],[
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 
-	  function App(props) {
+	  function App() {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
 	  }
 
 	  _createClass(App, [{
 	    key: 'render',
+
+	    // constructor(props) {
+	    //   super(props);
+	    // }
 	    value: function render() {
 	      var _props = this.props,
 	          children = _props.children,
 	          actions = _props.actions,
 	          text = _props.text;
+	      // console.log(this.props);
 
 	      return _react2.default.createElement(
 	        'div',
