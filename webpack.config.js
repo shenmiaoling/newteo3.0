@@ -12,9 +12,10 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'bundle.js',
-    path: path.join(__dirname, 'build'),
-    publicPath: '/static/'
+    filename: 'application.js',
+    path: path.join(__dirname, './build'),
+    publicPath: '/build/',
+    chunkFilename: '[name].[chunkhash:].chunk.js'
   },
   module: {
     loaders: [

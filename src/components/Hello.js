@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react'
     this.props.actions.changeText()
   }
   render(){
-    const text  = this.props.text
+    const {text}  = this.props
     return (
       <h1
     onClick={this.handleClick}> {text} </h1>

@@ -7,17 +7,15 @@ class App extends React.Component {
     super(props);
   }
   render(){
-    const { actions,text } = this.props
+    const { children,actions,text } = this.props
     return (
       <div>
-        <Hello actions = {actions} text={text}/>
-        {
+      {
           children && React.cloneElement(children, {
             actions: actions,
             text: text
           })
         }
-        <Change actions = {actions}/>
       </div>
       )
   }
