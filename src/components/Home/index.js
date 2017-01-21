@@ -34,8 +34,19 @@ export default class Topbar extends Component {
               <div style={{textAlign:"right"}}>
                 <button id="know-more" className="know-more">了解更多</button>
               </div>
-
             </div>
+          </div>
+          <div className="product">
+          	<div className="product-intro">合作伙伴</div>
+          	<div className="product-subintro">新潮团队已为以下商家提供开发团队。</div>
+          	<div className="product-container">
+          		<img className="product-img" src="/images/product1.png"/>
+          		<div className="product-title">广东红苹果一元家具设计有限公司</div>
+          	</div>
+          	<div className="product-container">
+          		<img className="product-img" src="/images/sky.png"/>
+          		<div className="product-title">北京蓝天科技有限公司</div>
+          	</div>
           </div>
         </div>
 
