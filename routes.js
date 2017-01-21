@@ -4,7 +4,7 @@ import App from './src/containers/App'
 
 const Home = (location, callback) => {
   require.ensure([], require => {
-    callback(null, require('./src/components/Topbar').default)
+    callback(null, require('./src/components/Home').default)
   }, 'home')
 };
 

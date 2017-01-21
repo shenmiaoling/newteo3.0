@@ -9,4 +9,11 @@ npm install react-dom --save
 
 npm install webpack --save-dev
 npm install babel-loader --save-dev
+npm install postcss-loader --save
+npm install css-loader --save
+npm install style-loader --save
+npm install stylus --save
+npm install stylus-loader --save
 npm install babel-polyfill --save
+npm install file-loader --save
+npm install url-loader --save

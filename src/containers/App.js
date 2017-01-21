@@ -2,19 +2,17 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from '../actions'
+import Topbar from '../components/Topbar'
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+  }
   render(){
-<<<<<<< HEAD
     const { children,actions,text } = this.props
-=======
-    const { actions,text } = this.props
-    // console.log(this.props);
->>>>>>> a42fb2f97113964a3ab81be2db7bd19eab9a5f69
+
     return (
       <div>
+        <Topbar />
       {
           children && React.cloneElement(children, {
             actions: actions,
@@ -26,7 +24,8 @@ class App extends React.Component {
   }
 }
 function mapStateToProps(state) {
-  return { text: state.text }
+
+  return { text: state.reducers.text }
 }
 //mapDispatchToProps的作用是把store中的dispatch方法注入给组件
 function mapDispatchToProps(dispatch) {

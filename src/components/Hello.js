@@ -9,7 +9,6 @@ import React, { PropTypes } from 'react'
   }
   render(){
     const {text} = this.props
-    // console.log(this.props)
     return (
       <h1
     onClick={this.handleClick}>{text} </h1>
