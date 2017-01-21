@@ -14,12 +14,20 @@ export default class Topbar extends Component {
           <button>联系我们</button>
           <div>hahahahh</div>
         </Link>*/}
-        <img src="/images/logo.png" className="logo"></img>
+        <div>
+          <img src="/images/logo.png" className="logo"></img>
         <span className="title">新潮科技</span>
         <div className="menu-icon">
-          <span className="iconfont icon-toggle-button"></span>
+          <span className="iconfont icon-toggle-left" onClick={this.handleClick}></span>
         </div>
-        
+        </div>
+{/*
+        <div className="wrapper">
+          <div id="slide">
+          <div id="slide-icon"><span className="iconfont icon-toggle-button" onClick={this.handleClick}></span></div>
+
+          </div>
+        </div>*/}
       </div>
     )
   }

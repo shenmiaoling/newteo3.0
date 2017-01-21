@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from '../actions'
 import Topbar from '../components/Topbar'
+import Footer from '../components/Footer'
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class App extends React.Component {
             text: text
           })
         }
+        <Footer/>
       </div>
       )
   }

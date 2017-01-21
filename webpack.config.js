@@ -15,7 +15,7 @@ module.exports = {
     filename: 'application.js',
     path: path.join(__dirname, './build'),
     publicPath: '/build/',
-    chunkFilename: '[name].[chunkhash:].chunk.js'
+    chunkFilename: '[name].[chunkhash:5].chunk.js'
   },
   module: {
     loaders: [

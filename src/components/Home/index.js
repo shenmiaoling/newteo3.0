@@ -2,7 +2,8 @@ import React,{ Component } from 'react'
 import { Link } from 'react-router'
 import "./style.styl"
 export default class Topbar extends Component {
-  componentDidMount() {
+  handleClick(){
+    document.getElementById("here").scrollIntoView()
   }
   render() {
     const {text,actions} = this.props
@@ -15,8 +16,11 @@ export default class Topbar extends Component {
             <div id="typefield">— 助力传统行业实现互联网+ </div>
           </div>
           <div className="two-btn">
-            <button className="contact-btn">联系我们</button>
-            <div className="team-btn">新潮团队</div>
+            <button className="contact-btn" onClick={this.handleClick}>联系我们</button>
+            <Link to="/about">
+              <div className="team-btn">新潮团队</div>
+            </Link>
+
           </div>
           </div>
           <div className="server-page">
@@ -47,6 +51,19 @@ export default class Topbar extends Component {
           		<img className="product-img" src="/images/sky.png"/>
           		<div className="product-title">北京蓝天科技有限公司</div>
           	</div>
+          </div>
+          <div className="contact" id="here">
+            <div className="contact-title">联系我们</div>
+            <hr/>
+            <div className="input-info">
+              <input className="basic-input" placeholder="称呼"/>
+              <input className="basic-input" placeholder="联系方式"/>
+              <input className="basic-input" placeholder="公司"/>
+              <textarea className="discription" placeholder="需求描述"/>
+              <button className="post-btn">发送</button>
+              <div className="tips">温馨提示：</div>
+              <div className="tips-text">称呼、联系方式和需求描述为必填项，有利于我们更好的沟通。</div>
+            </div>
           </div>
         </div>
 
