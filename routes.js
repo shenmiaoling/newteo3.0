@@ -13,6 +13,31 @@ const AboutUs = (location, callback) => {
   }, 'about')
 };
 
+const ServerIntro = (location, callback) => {
+  require.ensure([], require => {
+    callback(null, require('./src/components/ServerIntro').default)
+  }, 'serverintro')
+};
+const ServerCategy = (location, callback) => {
+  require.ensure([], require => {
+    callback(null, require('./src/components/ServerCategy').default)
+  }, 'servercategy')
+};
+const ServerContact = (location, callback) => {
+  require.ensure([], require => {
+    callback(null, require('./src/components/ServerContact').default)
+  }, 'servercontact')
+};
+const Tool = (location, callback) => {
+  require.ensure([], require => {
+    callback(null, require('./src/components/Tool').default)
+  }, 'tool')
+};
+const ItemDetail = (location, callback) => {
+  require.ensure([], require => {
+    callback(null, require('./src/components/ItemDetail').default)
+  }, 'detail')
+};
 const NotFound = (location, callback) => {
   require.ensure([], require => {
     callback(null, require('./src/components/NotFound').default)
@@ -25,6 +50,11 @@ export default (
       <IndexRoute getComponent={Home} />
       <Route path="/home" getComponent={Home} />
       <Route path="/about" getComponent={AboutUs} />
+      <Route path="/serverintro" getComponent={ServerIntro} />
+      <Route path="/servercategy" getComponent={ServerCategy} />
+      <Route path="/servercontact" getComponent={ServerContact} />
+      <Route path="/tool" getComponent={Tool} />
+      <Route path="/detail" getComponent={ItemDetail} />
       <Route path="*" getComponent={NotFound} />
     </Route>
   </Route>

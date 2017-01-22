@@ -15,8 +15,10 @@ export default class Topbar extends Component {
           <div>hahahahh</div>
         </Link>*/}
         <div>
+        <Link to="/home">
           <img src="/images/logo.png" className="logo"></img>
-        <span className="title">新潮科技</span>
+          <span className="title">新潮科技</span>
+        </Link>
         <div className="menu-icon">
           <span className="iconfont icon-toggle-left" onClick={this.handleClick}></span>
         </div>
