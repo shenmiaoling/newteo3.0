@@ -1,12 +1,29 @@
 import React,{ Component } from 'react'
 import { Link } from 'react-router'
+import {API_URL} from '../../../constant'
 import "./style.styl"
+import superagent from 'superagent'
 export default class Topbar extends Component {
+  constructor(props) {
+    super(props);
+    this.getProject = this.getProject.bind(this)
+  }
+  componentWillMount() {
+    this.getProject()
+    // superagent.get(`${API_URL}/partner`).end((err,response)=>{
+    //       project: response.body
+    //     })
+  }
+  getProject(){
+    const { fetchProjectList } = this.props.actions
+    fetchProjectList()
+  }
   handleClick(){
     document.getElementById("here").scrollIntoView()
   }
   render() {
-    const {text,actions,tips} = this.props
+    const {text,actions,tips,project} = this.props
+    console.log(this.props.project);
     return (
       <div>
         <div className="home">

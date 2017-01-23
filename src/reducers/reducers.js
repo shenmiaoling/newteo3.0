@@ -1,6 +1,7 @@
 let initialState = {
   text: 'Hello',
-  tips: false
+  tips: false,
+  sideBar: false
 }
 export default function reducers (state = initialState, action) {
   switch (action.type) {
@@ -16,10 +17,19 @@ export default function reducers (state = initialState, action) {
       return {
         tips: !state.tips
       }
+    case 'CLICK_MENU':
+      return {
+        sideBar: !state.sideBar
+      }
+    case 'HIDE_MENU':
+      return {
+        sideBar: true
+      }
     default:
       return {
         text: 'Hello',
-        tips: false
+        tips: false,
+        sideBar: false
       }
   }
 }

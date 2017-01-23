@@ -2,17 +2,21 @@ import React,{ Component } from 'react'
 import { Link } from 'react-router'
 import "./style.styl"
 export default class Topbar extends Component {
+    constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
+    this.hideMenu = this.hideMenu.bind(this)
+  }
+  handleClick(){
+    this.props.actions.handleMenu()
+  }
+  hideMenu(){
+    this.props.actions.hideMenu()
+  }
   render() {
-    const {text,actions} = this.props
-    const activeStyle = {backgroundColor: 'rgba( 155, 154, 155, 0.42)'}
+    const {sideBar} = this.props
     return (
       <div className="topbar">
-{/*      <Hello text={text} actions={actions}/>
-      <Change actions = {actions}/>
-        <Link to="/contact">
-          <button>联系我们</button>
-          <div>hahahahh</div>
-        </Link>*/}
         <div>
         <Link to="/home">
           <img src="/images/logo.png" className="logo"></img>
@@ -22,15 +26,14 @@ export default class Topbar extends Component {
           <span className="iconfont icon-toggle-left" onClick={this.handleClick}></span>
         </div>
         </div>
-        <div className="wrapper">
+        <div className={sideBar?"wrapper-display":"wrapper"}>
           <div id="slide">
           <div id="slide-icon"><span className="iconfont icon-toggle-button" onClick={this.handleClick}></span></div>
           </div>
           <div className="menu-title">
-          <Link to="/home"><div>首页</div></Link>
-          <Link to="/about"><div>关于我们</div></Link>
-          <Link to=""><div>合作条款</div></Link>
-
+          <Link to="/home"><div className={this.props.location.pathname=="/home"?"activeStyle":""} onClick={this.hideMenu}>首页</div></Link>
+          <Link to="/about"><div  className={this.props.location.pathname=="/about"?"activeStyle":""} onClick={this.hideMenu}>关于我们</div></Link>
+          <Link to="/rule"><div  className={this.props.location.pathname=="/rule"?"activeStyle":""} onClick={this.hideMenu}>合作条款</div></Link>
           </div>
         </div>
       </div>
