@@ -10916,23 +10916,23 @@ webpackJsonp([0],[
 	  });
 	};
 	var ServerContact = function ServerContact(location, callback) {
-	  __webpack_require__.e/* nsure */(7, function (require) {
-	    callback(null, __webpack_require__(604).default);
+	  __webpack_require__.e/* nsure */(5, function (require) {
+	    callback(null, __webpack_require__(603).default);
 	  });
 	};
 	var Tool = function Tool(location, callback) {
-	  __webpack_require__.e/* nsure */(8, function (require) {
-	    callback(null, __webpack_require__(607).default);
+	  __webpack_require__.e/* nsure */(6, function (require) {
+	    callback(null, __webpack_require__(606).default);
 	  });
 	};
 	var ItemDetail = function ItemDetail(location, callback) {
-	  __webpack_require__.e/* nsure */(9, function (require) {
-	    callback(null, __webpack_require__(610).default);
+	  __webpack_require__.e/* nsure */(7, function (require) {
+	    callback(null, __webpack_require__(609).default);
 	  });
 	};
 	var NotFound = function NotFound(location, callback) {
-	  __webpack_require__.e/* nsure */(5, function (require) {
-	    callback(null, __webpack_require__(603).default);
+	  __webpack_require__.e/* nsure */(8, function (require) {
+	    callback(null, __webpack_require__(612).default);
 	  });
 	};
 
