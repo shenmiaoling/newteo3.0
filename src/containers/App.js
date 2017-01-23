@@ -9,15 +9,15 @@ class App extends React.Component {
     super(props);
   }
   render(){
-    const { children,actions,text } = this.props
-
+    const { children,actions,text,tips } = this.props
     return (
       <div>
         <Topbar />
       {
           children && React.cloneElement(children, {
             actions: actions,
-            text: text
+            text: text,
+            tips: tips
           })
         }
         <Footer/>
@@ -26,8 +26,10 @@ class App extends React.Component {
   }
 }
 function mapStateToProps(state) {
-
-  return { text: state.reducers.text }
+  return {
+    text: state.reducers.text,
+    tips: state.reducers.tips
+    }
 }
 //mapDispatchToProps的作用是把store中的dispatch方法注入给组件
 function mapDispatchToProps(dispatch) {

@@ -9705,7 +9705,8 @@ webpackJsonp([0],[
 	});
 	exports.default = reducers;
 	var initialState = {
-	  text: 'Hello'
+	  text: 'Hello',
+	  tips: false
 	};
 	function reducers() {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -9720,9 +9721,14 @@ webpackJsonp([0],[
 	      return {
 	        text: 'You just click button'
 	      };
+	    case 'CLICK_TIPS':
+	      return {
+	        tips: !state.tips
+	      };
 	    default:
 	      return {
-	        text: 'Hello'
+	        text: 'Hello',
+	        tips: false
 	      };
 	  }
 	}
@@ -10916,23 +10922,23 @@ webpackJsonp([0],[
 	  });
 	};
 	var ServerContact = function ServerContact(location, callback) {
-	  __webpack_require__.e/* nsure */(7, function (require) {
-	    callback(null, __webpack_require__(604).default);
+	  __webpack_require__.e/* nsure */(5, function (require) {
+	    callback(null, __webpack_require__(603).default);
 	  });
 	};
 	var Tool = function Tool(location, callback) {
-	  __webpack_require__.e/* nsure */(8, function (require) {
-	    callback(null, __webpack_require__(607).default);
+	  __webpack_require__.e/* nsure */(6, function (require) {
+	    callback(null, __webpack_require__(606).default);
 	  });
 	};
 	var ItemDetail = function ItemDetail(location, callback) {
-	  __webpack_require__.e/* nsure */(9, function (require) {
-	    callback(null, __webpack_require__(610).default);
+	  __webpack_require__.e/* nsure */(7, function (require) {
+	    callback(null, __webpack_require__(609).default);
 	  });
 	};
 	var NotFound = function NotFound(location, callback) {
-	  __webpack_require__.e/* nsure */(5, function (require) {
-	    callback(null, __webpack_require__(603).default);
+	  __webpack_require__.e/* nsure */(8, function (require) {
+	    callback(null, __webpack_require__(612).default);
 	  });
 	};
 
@@ -11011,8 +11017,8 @@ webpackJsonp([0],[
 	      var _props = this.props,
 	          children = _props.children,
 	          actions = _props.actions,
-	          text = _props.text;
-
+	          text = _props.text,
+	          tips = _props.tips;
 
 	      return _react2.default.createElement(
 	        'div',
@@ -11020,7 +11026,8 @@ webpackJsonp([0],[
 	        _react2.default.createElement(_Topbar2.default, null),
 	        children && _react2.default.cloneElement(children, {
 	          actions: actions,
-	          text: text
+	          text: text,
+	          tips: tips
 	        }),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -11031,8 +11038,10 @@ webpackJsonp([0],[
 	}(_react2.default.Component);
 
 	function mapStateToProps(state) {
-
-	  return { text: state.reducers.text };
+	  return {
+	    text: state.reducers.text,
+	    tips: state.reducers.tips
+	  };
 	}
 	//mapDispatchToProps的作用是把store中的dispatch方法注入给组件
 	function mapDispatchToProps(dispatch) {
@@ -11054,6 +11063,7 @@ webpackJsonp([0],[
 	});
 	exports.changeText = changeText;
 	exports.buttonClick = buttonClick;
+	exports.handleTips = handleTips;
 	function changeText() {
 	  return {
 	    type: 'CHANGE_TEXT'
@@ -11063,6 +11073,12 @@ webpackJsonp([0],[
 	function buttonClick() {
 	  return {
 	    type: 'BUTTON_CLICK'
+	  };
+	}
+
+	function handleTips() {
+	  return {
+	    type: 'CLICK_TIPS'
 	  };
 	}
 
@@ -11083,14 +11099,6 @@ webpackJsonp([0],[
 	var _react2 = _interopRequireDefault(_react);
 
 	var _reactRouter = __webpack_require__(474);
-
-	var _Hello = __webpack_require__(579);
-
-	var _Hello2 = _interopRequireDefault(_Hello);
-
-	var _Change = __webpack_require__(580);
-
-	var _Change2 = _interopRequireDefault(_Change);
 
 	__webpack_require__(581);
 
@@ -11118,6 +11126,7 @@ webpackJsonp([0],[
 	          text = _props.text,
 	          actions = _props.actions;
 
+	      var activeStyle = { backgroundColor: 'rgba( 155, 154, 155, 0.42)' };
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'topbar' },
@@ -11139,6 +11148,50 @@ webpackJsonp([0],[
 	            { className: 'menu-icon' },
 	            _react2.default.createElement('span', { className: 'iconfont icon-toggle-left', onClick: this.handleClick })
 	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'wrapper' },
+	          _react2.default.createElement(
+	            'div',
+	            { id: 'slide' },
+	            _react2.default.createElement(
+	              'div',
+	              { id: 'slide-icon' },
+	              _react2.default.createElement('span', { className: 'iconfont icon-toggle-button', onClick: this.handleClick })
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'menu-title' },
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/home' },
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                '\u9996\u9875'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/about' },
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                '\u5173\u4E8E\u6211\u4EEC'
+	              )
+	            ),
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '' },
+	              _react2.default.createElement(
+	                'div',
+	                null,
+	                '\u5408\u4F5C\u6761\u6B3E'
+	              )
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -11150,129 +11203,8 @@ webpackJsonp([0],[
 	exports.default = Topbar;
 
 /***/ },
-/* 579 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(298);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Hello = function (_React$Component) {
-	  _inherits(Hello, _React$Component);
-
-	  function Hello(props) {
-	    _classCallCheck(this, Hello);
-
-	    var _this = _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).call(this, props));
-
-	    _this.handleClick = _this.handleClick.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(Hello, [{
-	    key: 'handleClick',
-	    value: function handleClick() {
-	      this.props.actions.changeText();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var text = this.props.text;
-
-	      return _react2.default.createElement(
-	        'h1',
-	        {
-	          onClick: this.handleClick },
-	        text,
-	        ' '
-	      );
-	    }
-	  }]);
-
-	  return Hello;
-	}(_react2.default.Component);
-
-	exports.default = Hello;
-
-/***/ },
-/* 580 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(298);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// const PropTypes = {
-	//   handleClick: PropTypes.func.isRequired
-	// }
-	var Change = function (_React$Component) {
-	  _inherits(Change, _React$Component);
-
-	  function Change(props) {
-	    _classCallCheck(this, Change);
-
-	    var _this = _possibleConstructorReturn(this, (Change.__proto__ || Object.getPrototypeOf(Change)).call(this, props));
-
-	    _this.handleClick = _this.handleClick.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(Change, [{
-	    key: 'handleClick',
-	    value: function handleClick() {
-	      this.props.actions.buttonClick();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'button',
-	        { onClick: this.handleClick },
-	        'change'
-	      );
-	    }
-	  }]);
-
-	  return Change;
-	}(_react2.default.Component);
-	// Change.PropTypes = PropTypes;
-
-
-	exports.default = Change;
-
-/***/ },
+/* 579 */,
+/* 580 */,
 /* 581 */
 /***/ function(module, exports) {
 

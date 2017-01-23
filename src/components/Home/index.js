@@ -6,7 +6,7 @@ export default class Topbar extends Component {
     document.getElementById("here").scrollIntoView()
   }
   render() {
-    const {text,actions} = this.props
+    const {text,actions,tips} = this.props
     return (
       <div>
         <div className="home">
@@ -30,7 +30,7 @@ export default class Topbar extends Component {
             <Link to="/serverintro">
             	<button className="know-more">了解更多</button>
             </Link>
-            
+
           </div>
           <div className="server-intro">
             <img src="/images/tool.png" className="tool-img"></img>
@@ -54,7 +54,7 @@ export default class Topbar extends Component {
                 <div className="product-title">广东红苹果一元家具设计有限公司</div>
               </div>
             </Link>
-            
+
           	<div className="product-container">
           		<img className="product-img" src="/images/sky.png"/>
           		<div className="product-title">北京蓝天科技有限公司</div>

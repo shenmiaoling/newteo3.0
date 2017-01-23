@@ -10,3 +10,9 @@ export function buttonClick(){
   }
 }
 
+export function handleTips(){
+  return {
+    type: 'CLICK_TIPS'
+  }
+}
+
