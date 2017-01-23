@@ -30,7 +30,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		9:0
+/******/ 		10:0
 /******/ 	};
 
 /******/ 	// The require function
@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + ({"0":"index","1":"home","2":"about","3":"serverintro","4":"servercategy","5":"servercontact","6":"tool","7":"detail","8":"notFound"}[chunkId]||chunkId) + "." + {"0":"23c64","1":"e9263","2":"85991","3":"77a04","4":"081b4","5":"c1ea9","6":"172d6","7":"8e12f","8":"ae2b4"}[chunkId] + ".chunk.js";
+/******/ 			script.src = __webpack_require__.p + "" + ({"0":"index","1":"home","2":"about","3":"serverintro","4":"servercategy","5":"servercontact","6":"tool","7":"detail","8":"rule","9":"notFound"}[chunkId]||chunkId) + "." + {"0":"7c932","1":"c1f24","2":"56625","3":"84f73","4":"a53e5","5":"77f06","6":"e9dfc","7":"5da6c","8":"f2037","9":"7411c"}[chunkId] + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

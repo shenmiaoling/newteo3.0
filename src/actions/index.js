@@ -1,12 +1,21 @@
-export function changeText(){
+export function fetchProjectList() {
   return {
-    type: 'CHANGE_TEXT'
+    type: 'FETCH_PROJECT'
   }
 }
-
-export function buttonClick(){
+export function handleTips(){
   return {
-    type: 'BUTTON_CLICK'
+    type: 'CLICK_TIPS'
+  }
+}
+export function handleMenu(){
+  return {
+    type: 'CLICK_MENU'
+  }
+}
+export function hideMenu(){
+  return {
+    type: 'HIDE_MENU'
   }
 }
 

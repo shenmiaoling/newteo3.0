@@ -1,12 +1,29 @@
 import React,{ Component } from 'react'
 import { Link } from 'react-router'
+import {API_URL} from '../../../constant'
 import "./style.styl"
+import superagent from 'superagent'
 export default class Topbar extends Component {
+  constructor(props) {
+    super(props);
+    this.getProject = this.getProject.bind(this)
+  }
+  componentWillMount() {
+    this.getProject()
+    // superagent.get(`${API_URL}/partner`).end((err,response)=>{
+    //       project: response.body
+    //     })
+  }
+  getProject(){
+    const { fetchProjectList } = this.props.actions
+    fetchProjectList()
+  }
   handleClick(){
     document.getElementById("here").scrollIntoView()
   }
   render() {
-    const {text,actions} = this.props
+    const {text,actions,tips,project} = this.props
+    console.log(this.props.project);
     return (
       <div>
         <div className="home">
@@ -30,7 +47,7 @@ export default class Topbar extends Component {
             <Link to="/serverintro">
             	<button className="know-more">了解更多</button>
             </Link>
-            
+
           </div>
           <div className="server-intro">
             <img src="/images/tool.png" className="tool-img"></img>
@@ -54,7 +71,7 @@ export default class Topbar extends Component {
                 <div className="product-title">广东红苹果一元家具设计有限公司</div>
               </div>
             </Link>
-            
+
           	<div className="product-container">
           		<img className="product-img" src="/images/sky.png"/>
           		<div className="product-title">北京蓝天科技有限公司</div>

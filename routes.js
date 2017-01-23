@@ -38,6 +38,11 @@ const ItemDetail = (location, callback) => {
     callback(null, require('./src/components/ItemDetail').default)
   }, 'detail')
 };
+const Rule = (location, callback) => {
+  require.ensure([], require => {
+    callback(null, require('./src/components/Rule').default)
+  }, 'rule')
+};
 const NotFound = (location, callback) => {
   require.ensure([], require => {
     callback(null, require('./src/components/NotFound').default)
@@ -55,6 +60,7 @@ export default (
       <Route path="/servercontact" getComponent={ServerContact} />
       <Route path="/tool" getComponent={Tool} />
       <Route path="/detail" getComponent={ItemDetail} />
+      <Route path="/rule" getComponent={Rule} />
       <Route path="*" getComponent={NotFound} />
     </Route>
   </Route>

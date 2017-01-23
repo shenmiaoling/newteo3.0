@@ -1,7 +1,15 @@
 import React , { Component }from 'react'
 import './style.styl'
 export default class NotFound extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick(){
+    this.props.actions.handleTips()
+  }
   render() {
+    const {tips} = this.props
     return (
       <div>
         <div className="detail">
@@ -15,11 +23,22 @@ export default class NotFound extends Component {
             <div className="card-bottom">启新科技官方网站</div>
             <button className="card-btn">已上线</button>
           </div>
-          
         </div>
-        
+        <div className="detail-status2" onClick={this.handleClick} >
+          <img src="/images/project2.png" className="project2-img"/>
+          <div className="card">
+            <div className="card-bottom">启科数据可视化APP</div>
+            <button className="card-btn2">开发中</button>
+          </div>
+        </div>
+        <div className="show-tips" onClick={this.handleClick} style={{display:tips?"block":"none"}}>
+          <div className="tips-container">
+            <div className="tips-top">提示</div>
+            <div className="tips-txt">该项目还在开发中</div>
+          </div>
+        </div>
       </div>
-      
+
     )
   }
 }

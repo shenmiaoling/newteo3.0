@@ -35,20 +35,39 @@ a
   height:100%;
   top:0px;
   left:0px;
-  background-color rgb(74, 74, 74)
-
-
+  background-color rgb(79,79,79)
+  display none
+.wrapper-display
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  background-color rgb(79,79,79)
+  display block
+  z-index 1
 #slide
-  position: absolute;
-
-
+  display: inline-block;
+  float: right;
+  margin-top: 14px;
+  color: #fff;
 .wrapper:hover #slide
   transition: 1s;
   left: 0;
 
 #slide-icon
-  display inline-block
-  float right
   margin-right 20px
   margin-top 4px
   color #fff
+.menu-title
+  margin-top 89px
+  text-align center
+  font-size 20px
+  line-height 44px
+.menu-title a
+  color rgba( 255, 255, 255, 0.50)
+.activeStyle
+  background-color: rgba( 155, 154, 155, 0.42)
+  color: #fff
+  width: 100%
+  display: block
