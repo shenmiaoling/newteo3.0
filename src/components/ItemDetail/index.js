@@ -1,15 +1,23 @@
 import React , { Component }from 'react'
 import './style.styl'
+import {API_URL} from '../../../constant'
 export default class NotFound extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this)
   }
+  componentDidMount(){
+    const { fetchProject } = this.props.actions
+    const id = this.props.params.id
+    fetchProject(`${API_URL}/partner/${id}`)
+  }
   handleClick(){
     this.props.actions.handleTips()
   }
   render() {
+    const {data} = this.props.project
     const {tips} = this.props
+    console.log(data)
     return (
       <div>
         <div className="detail">

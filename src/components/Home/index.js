@@ -1,29 +1,21 @@
 import React,{ Component } from 'react'
 import { Link } from 'react-router'
 import {API_URL} from '../../../constant'
+import ProjectList from '../ProjectList'
+import Contact from '../Contact'
 import "./style.styl"
-import superagent from 'superagent'
-export default class Topbar extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.getProject = this.getProject.bind(this)
   }
-  componentWillMount() {
-    this.getProject()
-    // superagent.get(`${API_URL}/partner`).end((err,response)=>{
-    //       project: response.body
-    //     })
-  }
-  getProject(){
-    const { fetchProjectList } = this.props.actions
-    fetchProjectList()
-  }
+
   handleClick(){
     document.getElementById("here").scrollIntoView()
   }
   render() {
-    const {text,actions,tips,project} = this.props
-    console.log(this.props.project);
+
+    const {actions,tips,projects} = this.props
+
     return (
       <div>
         <div className="home">
@@ -62,34 +54,8 @@ export default class Topbar extends Component {
               </div>
             </div>
           </div>
-          <div className="product">
-          	<div className="product-intro">合作伙伴</div>
-            <div className="product-subintro">新潮团队已为以下商家提供开发团队。</div>
-          	 <Link to="/detail">
-              <div className="product-container">
-                <img className="product-img" src="/images/product1.png"/>
-                <div className="product-title">广东红苹果一元家具设计有限公司</div>
-              </div>
-            </Link>
-
-          	<div className="product-container">
-          		<img className="product-img" src="/images/sky.png"/>
-          		<div className="product-title">北京蓝天科技有限公司</div>
-          	</div>
-          </div>
-          <div className="contact" id="here">
-            <div className="contact-title">联系我们</div>
-            <hr/>
-            <div className="input-info">
-              <input className="basic-input" placeholder="称呼"/>
-              <input className="basic-input" placeholder="联系方式"/>
-              <input className="basic-input" placeholder="公司"/>
-              <textarea className="discription" placeholder="需求描述"/>
-              <button className="post-btn">发送</button>
-              <div className="tips">温馨提示：</div>
-              <div className="tips-text">称呼、联系方式和需求描述为必填项，有利于我们更好的沟通。</div>
-            </div>
-          </div>
+          <ProjectList actions={actions} projects={projects}/>
+          <Contact/>
         </div>
 
 

@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux'
 import { routerReducer as routing } from 'react-router-redux'
-import reducers from './reducers'
+import booleans from './booleans'
 import projects from './projects'
-
+import project from './project'
 const rootReducer = combineReducers({
-  reducers,
+  booleans,
   projects,
+  project,
   routing
 })
 export default rootReducer

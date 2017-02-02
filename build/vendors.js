@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + ({"0":"index","1":"home","2":"about","3":"serverintro","4":"servercategy","5":"servercontact","6":"tool","7":"detail","8":"rule","9":"notFound"}[chunkId]||chunkId) + "." + {"0":"7c932","1":"c1f24","2":"56625","3":"84f73","4":"a53e5","5":"77f06","6":"e9dfc","7":"5da6c","8":"f2037","9":"7411c"}[chunkId] + ".chunk.js";
+/******/ 			script.src = __webpack_require__.p + "" + ({"0":"index","1":"home","2":"about","3":"serverintro","4":"servercategy","5":"servercontact","6":"tool","7":"detail","8":"rule","9":"notFound"}[chunkId]||chunkId) + "." + {"0":"d0839","1":"7722f","2":"69b30","3":"1242c","4":"f8793","5":"82b8e","6":"49c10","7":"ac509","8":"e1905","9":"dab04"}[chunkId] + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

@@ -9,18 +9,17 @@ class App extends React.Component {
     super(props);
   }
   render(){
-    // console.log(this.props);
-    const { children,actions,text,tips,location,sideBar,project } = this.props
+    const { children,actions,tips,location,sideBar,projects,project } = this.props
     return (
       <div>
         <Topbar location={location} sideBar={sideBar} actions={actions}/>
       {
           children && React.cloneElement(children, {
             actions: actions,
-            text: text,
             tips: tips,
             location: location,
             sideBar: sideBar,
+            projects: projects,
             project: project
           })
         }
@@ -31,10 +30,11 @@ class App extends React.Component {
 }
 function mapStateToProps(state) {
   return {
-    text: state.reducers.text,
-    tips: state.reducers.tips,
-    sideBar: state.reducers.sideBar,
-    project: state.projects.project
+    text: state.booleans.text,
+    tips: state.booleans.tips,
+    sideBar: state.booleans.sideBar,
+    projects: state.projects,
+    project: state.project
     }
 }
 //mapDispatchToProps的作用是把store中的dispatch方法注入给组件

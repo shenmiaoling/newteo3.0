@@ -3,7 +3,7 @@ let initialState = {
   tips: false,
   sideBar: false
 }
-export default function reducers (state = initialState, action) {
+export default function booleans (state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_TEXT':
       return {

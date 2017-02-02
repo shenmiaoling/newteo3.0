@@ -59,7 +59,7 @@ export default (
       <Route path="/servercategy" getComponent={ServerCategy} />
       <Route path="/servercontact" getComponent={ServerContact} />
       <Route path="/tool" getComponent={Tool} />
-      <Route path="/detail" getComponent={ItemDetail} />
+      <Route path="/detail/:id" getComponent={ItemDetail} />
       <Route path="/rule" getComponent={Rule} />
       <Route path="*" getComponent={NotFound} />
     </Route>
