@@ -9694,12 +9694,17 @@ webpackJsonp([0],[
 
 	var _project2 = _interopRequireDefault(_project);
 
+	var _requirement = __webpack_require__(632);
+
+	var _requirement2 = _interopRequireDefault(_requirement);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var rootReducer = (0, _redux.combineReducers)({
 	  booleans: _booleans2.default,
 	  projects: _projects2.default,
 	  project: _project2.default,
+	  requirement: _requirement2.default,
 	  routing: _reactRouterRedux.routerReducer
 	});
 	exports.default = rootReducer;
@@ -9715,7 +9720,6 @@ webpackJsonp([0],[
 	});
 	exports.default = booleans;
 	var initialState = {
-	  text: 'Hello',
 	  tips: false,
 	  sideBar: false
 	};
@@ -9724,14 +9728,6 @@ webpackJsonp([0],[
 	  var action = arguments[1];
 
 	  switch (action.type) {
-	    case 'CHANGE_TEXT':
-	      return {
-	        text: state.text == 'Hello' ? 'Stark' : 'Hello'
-	      };
-	    case 'BUTTON_CLICK':
-	      return {
-	        text: 'You just click button'
-	      };
 	    case 'CLICK_TIPS':
 	      return {
 	        tips: !state.tips
@@ -9746,7 +9742,6 @@ webpackJsonp([0],[
 	      };
 	    default:
 	      return {
-	        text: 'Hello',
 	        tips: false,
 	        sideBar: false
 	      };
@@ -9775,8 +9770,7 @@ webpackJsonp([0],[
 	var initialState = {
 	  status: '',
 	  data: [],
-	  errMsg: '',
-	  end: false
+	  errMsg: ''
 	};
 	function projects() {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -9786,7 +9780,7 @@ webpackJsonp([0],[
 	    case 'FETCH_PROJECT_LIST_REQUEST':
 	      return Object.assign({}, state, { status: 'fetch_start', loading: true });
 	    case 'FETCH_PROJECT_LIST_SUCCESS':
-	      return Object.assign({}, state, { status: 'fetch_success', data: action.ProjectList, end: action.end });
+	      return Object.assign({}, state, { status: 'fetch_success', data: action.ProjectList });
 	    case 'FETCH_PROJECT_LIST_FAILURE':
 	      return Object.assign({}, state, { status: 'fetch_fail', errMsg: action.err });
 	    default:
@@ -12889,7 +12883,7 @@ webpackJsonp([0],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Home = function Home(location, callback) {
-	  __webpack_require__.e/* nsure */(1, function (require) {
+	  __webpack_require__.e/* nsure */(1/* empty */, function (require) {
 	    callback(null, __webpack_require__(598).default);
 	  });
 	};
@@ -13016,7 +13010,8 @@ webpackJsonp([0],[
 	          location = _props.location,
 	          sideBar = _props.sideBar,
 	          projects = _props.projects,
-	          project = _props.project;
+	          project = _props.project,
+	          requirement = _props.requirement;
 
 	      return _react2.default.createElement(
 	        'div',
@@ -13028,7 +13023,8 @@ webpackJsonp([0],[
 	          location: location,
 	          sideBar: sideBar,
 	          projects: projects,
-	          project: project
+	          project: project,
+	          requirement: requirement
 	        }),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -13044,7 +13040,8 @@ webpackJsonp([0],[
 	    tips: state.booleans.tips,
 	    sideBar: state.booleans.sideBar,
 	    projects: state.projects,
-	    project: state.project
+	    project: state.project,
+	    requirement: state.requirement
 	  };
 	}
 	//mapDispatchToProps的作用是把store中的dispatch方法注入给组件
@@ -13067,6 +13064,7 @@ webpackJsonp([0],[
 	});
 	exports.fetchProjectList = fetchProjectList;
 	exports.fetchProject = fetchProject;
+	exports.fetchRequirement = fetchRequirement;
 	exports.handleTips = handleTips;
 	exports.handleMenu = handleMenu;
 	exports.hideMenu = hideMenu;
@@ -13138,6 +13136,39 @@ webpackJsonp([0],[
 	      dispatch(fetchProjectSuccess(json));
 	    }).catch(function (err) {
 	      dispatch(fetchProjectFailure(err));
+	    });
+	  };
+	}
+	function fetchRequirementRequest() {
+	  return {
+	    type: 'FETCH_REQUIREMENT_REQUEST'
+	  };
+	}
+	function fetchRequirementSuccess(json) {
+	  return {
+	    type: 'FETCH_REQUIREMENT_SUCCESS',
+	    Requirement: json
+	  };
+	}
+	function fetchRequirementFailure(err) {
+	  return {
+	    type: 'FETCH_REQUIREMENT_FAILURE',
+	    err: err
+	  };
+	}
+	function fetchRequirement(api, data) {
+	  return function (dispatch) {
+	    dispatch(fetchRequirementRequest());
+	    return (0, _isomorphicFetch2.default)(api, {
+	      method: 'POST',
+	      headers: {
+	        'Content-Type': 'application/json'
+	      },
+	      body: JSON.stringify({
+	        data: data
+	      })
+	    }).catch(function (err) {
+	      dispatch(fetchRequirementFailure(err));
 	    });
 	  };
 	}
@@ -13835,6 +13866,73 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */,
+/* 612 */,
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = requirement;
+	var InitState = {
+	  post: false,
+	  status: '',
+	  errMsg: ''
+	};
+
+	function requirement() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : InitState;
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case 'FETCH_REQUIREMENT_REQUEST':
+	      return Object.assign({}, state, { status: 'fetch_start' });
+	    case 'FETCH_REQUIREMENT_SUCCESS':
+	      return Object.assign({}, state, { status: 'fetch_success', post: true });
+	    case 'FETCH_REQUIREMENT_FAILURE':
+	      return Object.assign({}, state, { status: 'fetch_failure', errMsg: action.err });
+	    default:
+	      return state;
+	  }
+	}
 
 /***/ }
 ]);

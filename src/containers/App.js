@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
   }
   render(){
-    const { children,actions,tips,location,sideBar,projects,project } = this.props
+    const { children,actions,tips,location,sideBar,projects,project,requirement } = this.props
     return (
       <div>
         <Topbar location={location} sideBar={sideBar} actions={actions}/>
@@ -20,7 +20,8 @@ class App extends React.Component {
             location: location,
             sideBar: sideBar,
             projects: projects,
-            project: project
+            project: project,
+            requirement: requirement
           })
         }
         <Footer/>
@@ -34,7 +35,8 @@ function mapStateToProps(state) {
     tips: state.booleans.tips,
     sideBar: state.booleans.sideBar,
     projects: state.projects,
-    project: state.project
+    project: state.project,
+    requirement: state.requirement
     }
 }
 //mapDispatchToProps的作用是把store中的dispatch方法注入给组件

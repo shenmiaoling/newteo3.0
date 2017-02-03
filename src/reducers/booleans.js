@@ -1,18 +1,9 @@
 let initialState = {
-  text: 'Hello',
   tips: false,
   sideBar: false
 }
 export default function booleans (state = initialState, action) {
   switch (action.type) {
-    case 'CHANGE_TEXT':
-      return {
-        text: state.text=='Hello'?'Stark':'Hello'
-      }
-    case 'BUTTON_CLICK':
-      return {
-        text: 'You just click button'
-      }
     case 'CLICK_TIPS':
       return {
         tips: !state.tips
@@ -27,7 +18,6 @@ export default function booleans (state = initialState, action) {
       }
     default:
       return {
-        text: 'Hello',
         tips: false,
         sideBar: false
       }

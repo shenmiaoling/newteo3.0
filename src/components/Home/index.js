@@ -4,11 +4,26 @@ import {API_URL} from '../../../constant'
 import ProjectList from '../ProjectList'
 import Contact from '../Contact'
 import "./style.styl"
+import fetch from 'isomorphic-fetch'
 export default class Home extends Component {
   constructor(props) {
     super(props);
   }
-
+//   componentDidMount(){
+//     const token = 'newteo3.0'
+//     fetch(`${API_URL}/requirement?token=${token}`, {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json'
+//   },
+//   body: JSON.stringify({
+//     name: 'Hubot',
+//     phone: '13555567876',
+//     company: 'jkl',
+//     info: 'sdcfs'
+//   })
+// })
+//   }
   handleClick(){
     document.getElementById("here").scrollIntoView()
   }

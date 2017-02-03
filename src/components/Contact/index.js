@@ -4,8 +4,8 @@ import {API_URL} from '../../../constant'
 import './style.styl'
 export default class Contact extends Component {
   render() {
-    const {text,actions,tips,project} = this.props
-    // console.log(this.props.project);
+    const {actions,requirement} = this.props
+    console.log(requirement);
     return (
           <div className="contact" id="here">
             <div className="contact-title">联系我们</div>

@@ -66,6 +66,40 @@ export function fetchProject(api) {
       })
   }
 }
+function fetchRequirementRequest() {
+  return {
+    type: 'FETCH_REQUIREMENT_REQUEST'
+  }
+}
+function fetchRequirementSuccess(json) {
+  return {
+    type:'FETCH_REQUIREMENT_SUCCESS',
+    Requirement: json
+  }
+}
+function fetchRequirementFailure(err) {
+  return {
+    type: 'FETCH_REQUIREMENT_FAILURE',
+    err: err
+  }
+}
+export function fetchRequirement(api,data) {
+  return dispatch => {
+    dispatch(fetchRequirementRequest())
+    return fetch(api, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              data
+            })
+          })
+      .catch((err) => {
+        dispatch(fetchRequirementFailure(err))
+      })
+  }
+}
 export function handleTips(){
   return {
     type: 'CLICK_TIPS'
