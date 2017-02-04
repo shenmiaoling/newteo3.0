@@ -1,7 +1,13 @@
 let InitState = {
   post: false,
   status:'',
-  errMsg: ''
+  errMsg: '',
+  userinfo:{
+    name:'',
+    phone:'',
+    company:'',
+    info:''
+  }
 }
 
 export default function requirement (state = InitState, action) {

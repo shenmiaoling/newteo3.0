@@ -29,8 +29,8 @@ export default class Home extends Component {
   }
   render() {
 
-    const {actions,tips,projects} = this.props
-
+    const {actions,tips,projects,requirement} = this.props
+    console.log(this.props);
     return (
       <div>
         <div className="home">
@@ -70,7 +70,7 @@ export default class Home extends Component {
             </div>
           </div>
           <ProjectList actions={actions} projects={projects}/>
-          <Contact/>
+          <Contact actions={actions} requirement={requirement}/>
         </div>
 
 

@@ -4,13 +4,17 @@ import {API_URL} from '../../../constant'
 import './style.styl'
 export default class Contact extends Component {
   handleChange(event){
-    const userinfo = {name:'',phone:'',campony:'',info:''}
+    const {userinfo} = this.props.requirement
     userinfo[event.target.name] = event.target.value
-    console.log(userinfo)
+    console.log(this.props.requirement)
+    const { fetchRequirement } = this.props.actions
+
+  }
+  handleSubmit(){
+    fetchRequirement(`API_URL/requirement`,userinfo)
   }
   render() {
     const {actions,requirement} = this.props
-    console.log(requirement);
     return (
           <div className="contact" id="here">
             <div className="contact-title">联系我们</div>

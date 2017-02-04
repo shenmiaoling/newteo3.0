@@ -20,7 +20,7 @@ webpackJsonp([0],[
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _Root = __webpack_require__(569);
+	var _Root = __webpack_require__(570);
 
 	var _Root2 = _interopRequireDefault(_Root);
 
@@ -9694,7 +9694,7 @@ webpackJsonp([0],[
 
 	var _project2 = _interopRequireDefault(_project);
 
-	var _requirement = __webpack_require__(632);
+	var _requirement = __webpack_require__(569);
 
 	var _requirement2 = _interopRequireDefault(_requirement);
 
@@ -11718,6 +11718,44 @@ webpackJsonp([0],[
 
 /***/ },
 /* 569 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = requirement;
+	var InitState = {
+	  post: false,
+	  status: '',
+	  errMsg: '',
+	  userinfo: {
+	    name: '',
+	    phone: '',
+	    company: '',
+	    info: ''
+	  }
+	};
+
+	function requirement() {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : InitState;
+	  var action = arguments[1];
+
+	  switch (action.type) {
+	    case 'FETCH_REQUIREMENT_REQUEST':
+	      return Object.assign({}, state, { status: 'fetch_start' });
+	    case 'FETCH_REQUIREMENT_SUCCESS':
+	      return Object.assign({}, state, { status: 'fetch_success', post: true });
+	    case 'FETCH_REQUIREMENT_FAILURE':
+	      return Object.assign({}, state, { status: 'fetch_failure', errMsg: action.err });
+	    default:
+	      return state;
+	  }
+	}
+
+/***/ },
+/* 570 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11732,9 +11770,9 @@ webpackJsonp([0],[
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(570);
+	var _reactRedux = __webpack_require__(571);
 
-	var _routes = __webpack_require__(585);
+	var _routes = __webpack_require__(586);
 
 	var _routes2 = _interopRequireDefault(_routes);
 
@@ -11784,7 +11822,7 @@ webpackJsonp([0],[
 	};
 
 /***/ },
-/* 570 */
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11792,15 +11830,15 @@ webpackJsonp([0],[
 	exports.__esModule = true;
 	exports.connect = exports.connectAdvanced = exports.Provider = undefined;
 
-	var _Provider = __webpack_require__(571);
+	var _Provider = __webpack_require__(572);
 
 	var _Provider2 = _interopRequireDefault(_Provider);
 
-	var _connectAdvanced = __webpack_require__(575);
+	var _connectAdvanced = __webpack_require__(576);
 
 	var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
 
-	var _connect = __webpack_require__(576);
+	var _connect = __webpack_require__(577);
 
 	var _connect2 = _interopRequireDefault(_connect);
 
@@ -11811,7 +11849,7 @@ webpackJsonp([0],[
 	exports.connect = _connect2.default;
 
 /***/ },
-/* 571 */
+/* 572 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11821,15 +11859,15 @@ webpackJsonp([0],[
 
 	var _react = __webpack_require__(298);
 
-	var _Subscription = __webpack_require__(572);
+	var _Subscription = __webpack_require__(573);
 
 	var _Subscription2 = _interopRequireDefault(_Subscription);
 
-	var _storeShape = __webpack_require__(573);
+	var _storeShape = __webpack_require__(574);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
-	var _warning = __webpack_require__(574);
+	var _warning = __webpack_require__(575);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -11900,7 +11938,7 @@ webpackJsonp([0],[
 	Provider.displayName = 'Provider';
 
 /***/ },
-/* 572 */
+/* 573 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -11998,7 +12036,7 @@ webpackJsonp([0],[
 	exports.default = Subscription;
 
 /***/ },
-/* 573 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12014,7 +12052,7 @@ webpackJsonp([0],[
 	});
 
 /***/ },
-/* 574 */
+/* 575 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12044,7 +12082,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 575 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12065,11 +12103,11 @@ webpackJsonp([0],[
 
 	var _react = __webpack_require__(298);
 
-	var _Subscription = __webpack_require__(572);
+	var _Subscription = __webpack_require__(573);
 
 	var _Subscription2 = _interopRequireDefault(_Subscription);
 
-	var _storeShape = __webpack_require__(573);
+	var _storeShape = __webpack_require__(574);
 
 	var _storeShape2 = _interopRequireDefault(_storeShape);
 
@@ -12325,7 +12363,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 576 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12336,27 +12374,27 @@ webpackJsonp([0],[
 
 	exports.createConnect = createConnect;
 
-	var _connectAdvanced = __webpack_require__(575);
+	var _connectAdvanced = __webpack_require__(576);
 
 	var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
 
-	var _shallowEqual = __webpack_require__(577);
+	var _shallowEqual = __webpack_require__(578);
 
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-	var _mapDispatchToProps = __webpack_require__(578);
+	var _mapDispatchToProps = __webpack_require__(579);
 
 	var _mapDispatchToProps2 = _interopRequireDefault(_mapDispatchToProps);
 
-	var _mapStateToProps = __webpack_require__(581);
+	var _mapStateToProps = __webpack_require__(582);
 
 	var _mapStateToProps2 = _interopRequireDefault(_mapStateToProps);
 
-	var _mergeProps = __webpack_require__(582);
+	var _mergeProps = __webpack_require__(583);
 
 	var _mergeProps2 = _interopRequireDefault(_mergeProps);
 
-	var _selectorFactory = __webpack_require__(583);
+	var _selectorFactory = __webpack_require__(584);
 
 	var _selectorFactory2 = _interopRequireDefault(_selectorFactory);
 
@@ -12458,7 +12496,7 @@ webpackJsonp([0],[
 	exports.default = createConnect();
 
 /***/ },
-/* 577 */
+/* 578 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -12486,7 +12524,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 578 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12498,7 +12536,7 @@ webpackJsonp([0],[
 
 	var _redux = __webpack_require__(535);
 
-	var _wrapMapToProps = __webpack_require__(579);
+	var _wrapMapToProps = __webpack_require__(580);
 
 	function whenMapDispatchToPropsIsFunction(mapDispatchToProps) {
 	  return typeof mapDispatchToProps === 'function' ? (0, _wrapMapToProps.wrapMapToPropsFunc)(mapDispatchToProps, 'mapDispatchToProps') : undefined;
@@ -12519,7 +12557,7 @@ webpackJsonp([0],[
 	exports.default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 
 /***/ },
-/* 579 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12529,7 +12567,7 @@ webpackJsonp([0],[
 	exports.getDependsOnOwnProps = getDependsOnOwnProps;
 	exports.wrapMapToPropsFunc = wrapMapToPropsFunc;
 
-	var _verifyPlainObject = __webpack_require__(580);
+	var _verifyPlainObject = __webpack_require__(581);
 
 	var _verifyPlainObject2 = _interopRequireDefault(_verifyPlainObject);
 
@@ -12600,7 +12638,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 580 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12612,7 +12650,7 @@ webpackJsonp([0],[
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(574);
+	var _warning = __webpack_require__(575);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -12625,7 +12663,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 581 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12634,7 +12672,7 @@ webpackJsonp([0],[
 	exports.whenMapStateToPropsIsFunction = whenMapStateToPropsIsFunction;
 	exports.whenMapStateToPropsIsMissing = whenMapStateToPropsIsMissing;
 
-	var _wrapMapToProps = __webpack_require__(579);
+	var _wrapMapToProps = __webpack_require__(580);
 
 	function whenMapStateToPropsIsFunction(mapStateToProps) {
 	  return typeof mapStateToProps === 'function' ? (0, _wrapMapToProps.wrapMapToPropsFunc)(mapStateToProps, 'mapStateToProps') : undefined;
@@ -12649,7 +12687,7 @@ webpackJsonp([0],[
 	exports.default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 
 /***/ },
-/* 582 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12663,7 +12701,7 @@ webpackJsonp([0],[
 	exports.whenMergePropsIsFunction = whenMergePropsIsFunction;
 	exports.whenMergePropsIsOmitted = whenMergePropsIsOmitted;
 
-	var _verifyPlainObject = __webpack_require__(580);
+	var _verifyPlainObject = __webpack_require__(581);
 
 	var _verifyPlainObject2 = _interopRequireDefault(_verifyPlainObject);
 
@@ -12712,7 +12750,7 @@ webpackJsonp([0],[
 	exports.default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 
 /***/ },
-/* 583 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12722,7 +12760,7 @@ webpackJsonp([0],[
 	exports.pureFinalPropsSelectorFactory = pureFinalPropsSelectorFactory;
 	exports.default = finalPropsSelectorFactory;
 
-	var _verifySubselectors = __webpack_require__(584);
+	var _verifySubselectors = __webpack_require__(585);
 
 	var _verifySubselectors2 = _interopRequireDefault(_verifySubselectors);
 
@@ -12830,7 +12868,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 584 */
+/* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12838,7 +12876,7 @@ webpackJsonp([0],[
 	exports.__esModule = true;
 	exports.default = verifySubselectors;
 
-	var _warning = __webpack_require__(574);
+	var _warning = __webpack_require__(575);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -12861,7 +12899,7 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 585 */
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12876,57 +12914,57 @@ webpackJsonp([0],[
 
 	var _reactRouter = __webpack_require__(474);
 
-	var _App = __webpack_require__(586);
+	var _App = __webpack_require__(587);
 
 	var _App2 = _interopRequireDefault(_App);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Home = function Home(location, callback) {
-	  __webpack_require__.e/* nsure */(1/* empty */, function (require) {
-	    callback(null, __webpack_require__(598).default);
+	  __webpack_require__.e/* nsure */(1, function (require) {
+	    callback(null, __webpack_require__(599).default);
 	  });
 	};
 
 	var AboutUs = function AboutUs(location, callback) {
 	  __webpack_require__.e/* nsure */(2, function (require) {
-	    callback(null, __webpack_require__(607).default);
+	    callback(null, __webpack_require__(608).default);
 	  });
 	};
 
 	var ServerIntro = function ServerIntro(location, callback) {
 	  __webpack_require__.e/* nsure */(3, function (require) {
-	    callback(null, __webpack_require__(610).default);
+	    callback(null, __webpack_require__(611).default);
 	  });
 	};
 	var ServerCategy = function ServerCategy(location, callback) {
 	  __webpack_require__.e/* nsure */(4, function (require) {
-	    callback(null, __webpack_require__(616).default);
+	    callback(null, __webpack_require__(617).default);
 	  });
 	};
 	var ServerContact = function ServerContact(location, callback) {
 	  __webpack_require__.e/* nsure */(5, function (require) {
-	    callback(null, __webpack_require__(619).default);
+	    callback(null, __webpack_require__(620).default);
 	  });
 	};
 	var Tool = function Tool(location, callback) {
 	  __webpack_require__.e/* nsure */(6, function (require) {
-	    callback(null, __webpack_require__(622).default);
+	    callback(null, __webpack_require__(623).default);
 	  });
 	};
 	var ItemDetail = function ItemDetail(location, callback) {
-	  __webpack_require__.e/* nsure */(7/* empty */, function (require) {
-	    callback(null, __webpack_require__(625).default);
+	  __webpack_require__.e/* nsure */(7, function (require) {
+	    callback(null, __webpack_require__(626).default);
 	  });
 	};
 	var Rule = function Rule(location, callback) {
 	  __webpack_require__.e/* nsure */(8, function (require) {
-	    callback(null, __webpack_require__(628).default);
+	    callback(null, __webpack_require__(629).default);
 	  });
 	};
 	var NotFound = function NotFound(location, callback) {
 	  __webpack_require__.e/* nsure */(9, function (require) {
-	    callback(null, __webpack_require__(631).default);
+	    callback(null, __webpack_require__(632).default);
 	  });
 	};
 
@@ -12950,7 +12988,7 @@ webpackJsonp([0],[
 	);
 
 /***/ },
-/* 586 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12967,17 +13005,17 @@ webpackJsonp([0],[
 
 	var _redux = __webpack_require__(535);
 
-	var _reactRedux = __webpack_require__(570);
+	var _reactRedux = __webpack_require__(571);
 
-	var _actions = __webpack_require__(587);
+	var _actions = __webpack_require__(588);
 
 	var Actions = _interopRequireWildcard(_actions);
 
-	var _Topbar = __webpack_require__(590);
+	var _Topbar = __webpack_require__(591);
 
 	var _Topbar2 = _interopRequireDefault(_Topbar);
 
-	var _Footer = __webpack_require__(595);
+	var _Footer = __webpack_require__(596);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -13054,7 +13092,7 @@ webpackJsonp([0],[
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ },
-/* 587 */
+/* 588 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13069,7 +13107,7 @@ webpackJsonp([0],[
 	exports.handleMenu = handleMenu;
 	exports.hideMenu = hideMenu;
 
-	var _isomorphicFetch = __webpack_require__(588);
+	var _isomorphicFetch = __webpack_require__(589);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
@@ -13189,19 +13227,19 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 588 */
+/* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// the whatwg-fetch polyfill installs the fetch() function
 	// on the global object (window or self)
 	//
 	// Return that as the export for use in Webpack, Browserify etc.
-	__webpack_require__(589);
+	__webpack_require__(590);
 	module.exports = self.fetch.bind(self);
 
 
 /***/ },
-/* 589 */
+/* 590 */
 /***/ function(module, exports) {
 
 	(function(self) {
@@ -13509,9 +13547,7 @@ webpackJsonp([0],[
 	    options = options || {}
 	    var body = options.body
 
-	    if (typeof input === 'string') {
-	      this.url = input
-	    } else {
+	    if (input instanceof Request) {
 	      if (input.bodyUsed) {
 	        throw new TypeError('Already read')
 	      }
@@ -13526,6 +13562,8 @@ webpackJsonp([0],[
 	        body = input._bodyInit
 	        input.bodyUsed = true
 	      }
+	    } else {
+	      this.url = String(input)
 	    }
 
 	    this.credentials = options.credentials || this.credentials || 'omit'
@@ -13561,7 +13599,7 @@ webpackJsonp([0],[
 
 	  function parseHeaders(rawHeaders) {
 	    var headers = new Headers()
-	    rawHeaders.split('\r\n').forEach(function(line) {
+	    rawHeaders.split(/\r?\n/).forEach(function(line) {
 	      var parts = line.split(':')
 	      var key = parts.shift().trim()
 	      if (key) {
@@ -13665,7 +13703,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 590 */
+/* 591 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13682,7 +13720,7 @@ webpackJsonp([0],[
 
 	var _reactRouter = __webpack_require__(474);
 
-	__webpack_require__(591);
+	__webpack_require__(592);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13796,16 +13834,16 @@ webpackJsonp([0],[
 	exports.default = Topbar;
 
 /***/ },
-/* 591 */
+/* 592 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 592 */,
 /* 593 */,
 /* 594 */,
-/* 595 */
+/* 595 */,
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13822,7 +13860,7 @@ webpackJsonp([0],[
 
 	var _reactRouter = __webpack_require__(474);
 
-	__webpack_require__(596);
+	__webpack_require__(597);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -13862,77 +13900,10 @@ webpackJsonp([0],[
 	exports.default = Footer;
 
 /***/ },
-/* 596 */
+/* 597 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 597 */,
-/* 598 */,
-/* 599 */,
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
-/* 612 */,
-/* 613 */,
-/* 614 */,
-/* 615 */,
-/* 616 */,
-/* 617 */,
-/* 618 */,
-/* 619 */,
-/* 620 */,
-/* 621 */,
-/* 622 */,
-/* 623 */,
-/* 624 */,
-/* 625 */,
-/* 626 */,
-/* 627 */,
-/* 628 */,
-/* 629 */,
-/* 630 */,
-/* 631 */,
-/* 632 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = requirement;
-	var InitState = {
-	  post: false,
-	  status: '',
-	  errMsg: ''
-	};
-
-	function requirement() {
-	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : InitState;
-	  var action = arguments[1];
-
-	  switch (action.type) {
-	    case 'FETCH_REQUIREMENT_REQUEST':
-	      return Object.assign({}, state, { status: 'fetch_start' });
-	    case 'FETCH_REQUIREMENT_SUCCESS':
-	      return Object.assign({}, state, { status: 'fetch_success', post: true });
-	    case 'FETCH_REQUIREMENT_FAILURE':
-	      return Object.assign({}, state, { status: 'fetch_failure', errMsg: action.err });
-	    default:
-	      return state;
-	  }
-	}
 
 /***/ }
 ]);
