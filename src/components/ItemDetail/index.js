@@ -26,13 +26,12 @@ export default class NotFound extends Component {
         </div>
         {
           data.products && data.products.map((item,index) => {
-            return <div key={index}> 
+            return <div key={index}>
               <div className="detail-status">
                 <img src={item.img[0].img_url} className="project-img"/>
                 <div className="card">
                   <div className="card-bottom">{item.title}</div>
                   <a href={item.url}><button className={item.online?"card-btn":"no-card-btn" }>已上线</button></a>
-                  
                   <button className={item.online?"no-card-btn":"card-btn2" } onClick={this.handleClick}>开发中</button>
                 </div>
               </div>

@@ -14,7 +14,7 @@ export default class Home extends Component {
   }
   render() {
 
-    const {actions,tips,projects,requirement} = this.props
+    const {actions,tips,projects,requirement,location,router} = this.props
     return (
       <div>
         <div className="home">
@@ -54,7 +54,7 @@ export default class Home extends Component {
             </div>
           </div>
           <ProjectList actions={actions} projects={projects}/>
-          <ContactForm  actions={actions}/>
+          <ContactForm  actions={actions} router={router}/>
         </div>
     )
   }

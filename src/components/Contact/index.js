@@ -2,7 +2,7 @@ import React,{ Component } from 'react'
 import { Link } from 'react-router'
 import {API_URL} from '../../../constant'
 import validateContact from './validateContact'
-import { Field, Form } from 'react-redux-form';
+import { Field, Form} from 'react-redux-form';
 import { connect } from 'react-redux';
 import './style.styl'
  class ContactForm extends Component {
@@ -17,6 +17,7 @@ import './style.styl'
     if (Object.keys(validateContact(val)).length == 0) {
         const {fetchRequirement} = this.props.actions
         fetchRequirement(`${API_URL}/requirement?token=newteo3.0`,val)
+        window.location.reload()
     }
   }
   render() {

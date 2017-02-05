@@ -16,6 +16,7 @@ export default class NotFound extends Component {
     if (Object.keys(validateContact(val)).length == 0) {
         const {fetchRequirement} = this.props.actions
         fetchRequirement(`${API_URL}/requirement?token=newteo3.0`,val)
+        window.location.reload()
     }
   }
   render() {
