@@ -31,7 +31,7 @@ export default class Topbar extends Component {
           <div id="slide-icon"><span className="iconfont icon-toggle-button" onClick={this.handleClick}></span></div>
           </div>
           <div className="menu-title">
-          <Link to="/home"><div className={this.props.location.pathname=="/home"?"activeStyle":""} onClick={this.hideMenu}>首页</div></Link>
+          <Link to="/home"><div className={this.props.location.pathname=="/home" || this.props.location.pathname=="/"?"activeStyle":""} onClick={this.hideMenu}>首页</div></Link>
           <Link to="/about"><div  className={this.props.location.pathname=="/about"?"activeStyle":""} onClick={this.hideMenu}>关于我们</div></Link>
           <Link to="/rule"><div  className={this.props.location.pathname=="/rule"?"activeStyle":""} onClick={this.hideMenu}>合作条款</div></Link>
           </div>

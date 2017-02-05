@@ -22,7 +22,7 @@ export default class NotFound extends Component {
         <div className="detail">
           <div className="detail-title">{data.name}</div>
           <div className="item-info">{data.introduction}</div>
-          <div className="info-card">启新科技公司因开发技术薄弱，和新潮合作一年，新潮向启新提供了设计师和前后端技术人员，弥补了启新暂时的短板，补全了启新的版图，战略得以完善。以下是双方合作的项目。</div>
+          <div className="info-card">{data.description}</div>
         </div>
         {
           data.products && data.products.map((item,index) => {
@@ -31,7 +31,8 @@ export default class NotFound extends Component {
                 <img src={item.img[0].img_url} className="project-img"/>
                 <div className="card">
                   <div className="card-bottom">{item.title}</div>
-                  <button className={item.online?"card-btn":"no-card-btn" }>已上线</button>
+                  <a href={item.url}><button className={item.online?"card-btn":"no-card-btn" }>已上线</button></a>
+                  
                   <button className={item.online?"no-card-btn":"card-btn2" } onClick={this.handleClick}>开发中</button>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import React , { Component }from 'react'
 import ServerTop from '../ServerTop'
 import { Field, Form } from 'react-redux-form';
 import validateContact from '../Contact/validateContact'
+import {API_URL} from '../../../constant'
 import './style.styl'
 export default class NotFound extends Component {
   constructor(props) {

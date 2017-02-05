@@ -21308,7 +21308,7 @@ webpackJsonp([0],[
 	  });
 	};
 	var ServerContact = function ServerContact(location, callback) {
-	  __webpack_require__.e/* nsure */(5/* empty */, function (require) {
+	  __webpack_require__.e/* nsure */(5, function (require) {
 	    callback(null, __webpack_require__(695).default);
 	  });
 	};
@@ -21318,18 +21318,18 @@ webpackJsonp([0],[
 	  });
 	};
 	var ItemDetail = function ItemDetail(location, callback) {
-	  __webpack_require__.e/* nsure */(7, function (require) {
+	  __webpack_require__.e/* nsure */(10/* empty */, function (require) {
 	    callback(null, __webpack_require__(701).default);
 	  });
 	};
 	var Rule = function Rule(location, callback) {
-	  __webpack_require__.e/* nsure */(8, function (require) {
-	    callback(null, __webpack_require__(704).default);
+	  __webpack_require__.e/* nsure */(7, function (require) {
+	    callback(null, __webpack_require__(702).default);
 	  });
 	};
 	var NotFound = function NotFound(location, callback) {
-	  __webpack_require__.e/* nsure */(9, function (require) {
-	    callback(null, __webpack_require__(707).default);
+	  __webpack_require__.e/* nsure */(8, function (require) {
+	    callback(null, __webpack_require__(705).default);
 	  });
 	};
 
@@ -21916,7 +21916,9 @@ webpackJsonp([0],[
 	    options = options || {}
 	    var body = options.body
 
-	    if (input instanceof Request) {
+	    if (typeof input === 'string') {
+	      this.url = input
+	    } else {
 	      if (input.bodyUsed) {
 	        throw new TypeError('Already read')
 	      }
@@ -21931,8 +21933,6 @@ webpackJsonp([0],[
 	        body = input._bodyInit
 	        input.bodyUsed = true
 	      }
-	    } else {
-	      this.url = String(input)
 	    }
 
 	    this.credentials = options.credentials || this.credentials || 'omit'
@@ -21968,7 +21968,7 @@ webpackJsonp([0],[
 
 	  function parseHeaders(rawHeaders) {
 	    var headers = new Headers()
-	    rawHeaders.split(/\r?\n/).forEach(function(line) {
+	    rawHeaders.split('\r\n').forEach(function(line) {
 	      var parts = line.split(':')
 	      var key = parts.shift().trim()
 	      if (key) {
@@ -22169,7 +22169,7 @@ webpackJsonp([0],[
 	              { to: '/home' },
 	              _react2.default.createElement(
 	                'div',
-	                { className: this.props.location.pathname == "/home" ? "activeStyle" : "", onClick: this.hideMenu },
+	                { className: this.props.location.pathname == "/home" || this.props.location.pathname == "/" ? "activeStyle" : "", onClick: this.hideMenu },
 	                '\u9996\u9875'
 	              )
 	            ),

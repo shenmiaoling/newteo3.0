@@ -15,7 +15,6 @@ export default class Home extends Component {
   render() {
 
     const {actions,tips,projects,requirement} = this.props
-    console.log(this.props);
     return (
       <div>
         <div className="home">
