@@ -8,7 +8,7 @@ app.use('/build', express.static('build'));
 app.get('*', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 })
-app.listen(4567, 'localhost', function(err) {
+app.listen(4567, function(err) {
   if(err) {
     console.log(err);
     return;
