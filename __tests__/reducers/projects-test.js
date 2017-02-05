@@ -1,15 +1,14 @@
-//test done
-import expect from 'expect'
-import projects from '../../reducers/projects'
+
+import projects from '../../src/reducers/projects'
 
 let InitState =
 {
   status:'',
-  data: '',
+  data: [],
   errMsg: ''
 }
 
-describe.skip('projects reducer', () => {
+describe('projects reducer', () => {
   it('should return the initial state', () => {
     expect(projects(undefined, {})).toEqual(InitState)
   })
@@ -26,7 +25,7 @@ describe.skip('projects reducer', () => {
     expect(
       projects([], {
       type: 'FETCH_PROJECT_LIST_SUCCESS',
-      ArticleList: 'hello'
+      ProjectList: 'hello'
     })
     ).toEqual({
       status:'fetch_success',
@@ -37,11 +36,11 @@ describe.skip('projects reducer', () => {
     expect(
       projects([], {
       type: 'FETCH_PROJECT_LIST_FAILURE',
-      err: 'world'
+      err: 'oops'
     })
     ).toEqual({
       status:'fetch_failure',
-      errMsg: 'world'
+      errMsg: 'oops'
     })
   })
 })

@@ -84,6 +84,7 @@ function fetchRequirementFailure(err) {
   }
 }
 export function fetchRequirement(api,data) {
+  console.log(data.name)
   return dispatch => {
     dispatch(fetchRequirementRequest())
     return fetch(api, {
@@ -92,7 +93,10 @@ export function fetchRequirement(api,data) {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              data
+              name: data.name,
+              phone: data.phone,
+              company: data.company,
+              info: data.info
             })
           })
       .catch((err) => {
