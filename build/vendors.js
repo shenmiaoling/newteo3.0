@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + ({"0":"index","1":"home","2":"about","3":"serverintro","4":"servercategy","5":"servercontact","6":"tool","7":"detail","8":"rule","9":"notFound"}[chunkId]||chunkId) + "." + {"0":"8e87d","1":"5fd87","2":"1dad6","3":"c9cea","4":"7c38b","5":"07237","6":"52c3b","7":"d9a8b","8":"30fcb","9":"88775"}[chunkId] + ".chunk.js";
+/******/ 			script.src = __webpack_require__.p + "" + ({"0":"index","1":"home","2":"about","3":"serverintro","4":"servercategy","5":"servercontact","6":"tool","7":"detail","8":"rule","9":"notFound"}[chunkId]||chunkId) + "." + {"0":"0d422","1":"edb0e","2":"2c7fe","3":"c6be7","4":"1febb","5":"50a78","6":"ed5e0","7":"cb532","8":"81bb8","9":"8b4e0"}[chunkId] + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
