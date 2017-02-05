@@ -19,8 +19,8 @@ export default class Home extends Component {
       <div>
         <div className="home">
           <div className="home-title">
-            <h2>无需花费100万的资金</h2>
-            <h2>就能拥有100万的开发力量</h2>
+            <div className="home-txt">无需花费100万的资金</div>
+            <div className="home-txt">就能拥有100万的开发力量</div>
             <div id="typefield">— 助力传统行业实现互联网+ </div>
           </div>
           <div className="two-btn">
@@ -28,7 +28,6 @@ export default class Home extends Component {
             <Link to="/about">
               <div className="team-btn">新潮团队</div>
             </Link>
-
           </div>
           </div>
           <div className="server-page">
