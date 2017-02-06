@@ -22,7 +22,9 @@ export default class NotFound extends Component {
         <div className="detail">
           <div className="detail-title">{data.name}</div>
           <div className="item-info">{data.introduction}</div>
-          <div className="info-card">{data.description}</div>
+          <div className="info-card-box">
+            <div className="info-card">{data.description}</div>
+          </div>
         </div>
         {
           data.products && data.products.map((item,index) => {
