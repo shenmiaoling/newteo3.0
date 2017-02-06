@@ -71,10 +71,10 @@ function fetchRequirementRequest() {
     type: 'FETCH_REQUIREMENT_REQUEST'
   }
 }
-function fetchRequirementSuccess(json) {
+function fetchRequirementSuccess(end) {
   return {
     type:'FETCH_REQUIREMENT_SUCCESS',
-    Requirement: json
+    end: end
   }
 }
 function fetchRequirementFailure(err) {
@@ -98,7 +98,15 @@ export function fetchRequirement(api,data) {
               company: data.company,
               info: data.info
             })
-          })
+          }).then(response => response.json())
+            .then(json => {
+              console.log(json);
+              if (json) {
+                dispatch(fetchRequirementSuccess(true))
+              }else{
+                dispatch(fetchRequirementSuccess(false))
+              }
+            })
       .catch((err) => {
         dispatch(fetchRequirementFailure(err))
       })

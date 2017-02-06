@@ -11731,9 +11731,9 @@ webpackJsonp([0],[
 	});
 	exports.default = requirement;
 	var InitState = {
-	  post: false,
 	  status: '',
-	  errMsg: ''
+	  errMsg: '',
+	  end: false
 	};
 
 	function requirement() {
@@ -11744,7 +11744,7 @@ webpackJsonp([0],[
 	    case 'FETCH_REQUIREMENT_REQUEST':
 	      return Object.assign({}, state, { status: 'fetch_start' });
 	    case 'FETCH_REQUIREMENT_SUCCESS':
-	      return Object.assign({}, state, { status: 'fetch_success', post: true });
+	      return Object.assign({}, state, { status: 'fetch_success', end: action.end });
 	    case 'FETCH_REQUIREMENT_FAILURE':
 	      return Object.assign({}, state, { status: 'fetch_failure', errMsg: action.err });
 	    default:
@@ -21547,10 +21547,10 @@ webpackJsonp([0],[
 	    type: 'FETCH_REQUIREMENT_REQUEST'
 	  };
 	}
-	function fetchRequirementSuccess(json) {
+	function fetchRequirementSuccess(end) {
 	  return {
 	    type: 'FETCH_REQUIREMENT_SUCCESS',
-	    Requirement: json
+	    end: end
 	  };
 	}
 	function fetchRequirementFailure(err) {
@@ -21574,6 +21574,15 @@ webpackJsonp([0],[
 	        company: data.company,
 	        info: data.info
 	      })
+	    }).then(function (response) {
+	      return response.json();
+	    }).then(function (json) {
+	      console.log(json);
+	      if (json) {
+	        dispatch(fetchRequirementSuccess(true));
+	      } else {
+	        dispatch(fetchRequirementSuccess(false));
+	      }
 	    }).catch(function (err) {
 	      dispatch(fetchRequirementFailure(err));
 	    });

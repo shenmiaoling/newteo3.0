@@ -6,6 +6,9 @@ export default class NotFound extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this)
   }
+  componentWillMount(){
+    window.scroll(null,0)
+  }
   componentDidMount(){
     const { fetchProject } = this.props.actions
     const id = this.props.params.id
