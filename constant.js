@@ -1,1 +1,1 @@
-export const API_URL = 'http://cbinbin.xyz'
+export const API_URL = 'https://api.newteo.com'

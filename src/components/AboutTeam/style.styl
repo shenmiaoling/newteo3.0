@@ -22,14 +22,39 @@
   font-size 14px
   line-height 20px
   margin-bottom 11px
-div.arrow-up {
-  width:0px; 
-  height:0px; 
-  border-left:20px solid transparent;  /* left arrow slant */
-  border-right:20px solid transparent; /* right arrow slant */
-  border-bottom:20px solid #fff; /* bottom, add background color here */
-  font-size:0px;
-  line-height:0px;
-  display block
-  margin 0 auto
-}
+.arrow-up-box
+  position relative
+.arrow-up
+  width 0px
+  height 0px;
+  border-left 20px solid transparent
+  border-right 20px solid transparent
+  border-bottom 20px solid #fff
+  font-size 0px
+  line-height 0px
+  position absolute
+  bottom 0px
+  left 46%
+  right 46%
+@media(max-width 768px)
+  .team
+    min-height calc(1024px - (80px + 52px + 45px))
+  .team-intro
+    padding: 54px 54px 50px 54px
+    width 70%
+  .team-context
+    line-height 40px
+@media(max-width 480px)
+  .team
+    min-height calc(800px - (80px + 52px + 45px))
+  .team-intro
+    padding 24px 14px 10px 14px
+    width 80%
+  .team-context
+    line-height 20px
+@media(max-width 414px)
+  .team
+    min-height calc(736px - (80px + 52px + 45px))
+@media(max-width 375px)
+  .team
+    min-height 0

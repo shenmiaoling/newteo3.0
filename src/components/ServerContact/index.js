@@ -23,7 +23,7 @@ export default class NotFound extends Component {
     return (
       <div>
       	<ServerTop/>
-      	<div className="category">
+      	<div className="contact-form">
           <div className="intro-title">请填写以下信息（大概需要58秒），<div> 我们将尽快与你联系。</div></div>
             <Form model="user" onSubmit={(val) => this.handleSubmit(val)}>
               <div className="intro-contain">
@@ -48,7 +48,7 @@ export default class NotFound extends Component {
               </div>
             </Form>
             <div className="code-title">微信扫下面的二维码，添加 客服/团队负责人</div>
-      	    <img src="/images/wechat-code.png" className="wechat-code"/>
+      	    <img src="/images/wechat-code.jpg" className="wechat-code"/>
         </div>
       </div>
     )

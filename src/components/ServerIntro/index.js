@@ -2,9 +2,12 @@ import React , { Component }from 'react'
 import ServerTop from '../ServerTop'
 import './style.styl'
 export default class NotFound extends Component {
+  componentWillMount(){
+    window.scroll(null,0)
+  }
   render() {
     return (
-      <div>
+      <div className="server-height">
       	<ServerTop/>
       	<div className="server">
       		<div className="intro-title">服务介绍</div>
@@ -19,7 +22,7 @@ export default class NotFound extends Component {
 	      		我们拥有专有工具，合作伙伴可以掌控团队的工作进程，可直接与开发者交流探讨功能的实现，也能与设计师探讨产品的呈现方式，双方深入交换意见才能产出好产品。
 	      		</div>
       		</div>
-      		
+
       	</div>
       </div>
     )

@@ -17,11 +17,12 @@ import './style.styl'
     if (Object.keys(validateContact(val)).length == 0) {
         const {fetchRequirement} = this.props.actions
         fetchRequirement(`${API_URL}/requirement?token=newteo3.0`,val)
-        window.location.reload()
+        // window.location.reload()
     }
   }
   render() {
-    let { user } = this.props;
+    let { requirement } = this.props;
+    console.log(this.props.requirement);
     return (
           <div className="contact" id="here">
             <div className="contact-title">联系我们</div>

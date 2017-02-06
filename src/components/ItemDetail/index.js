@@ -6,6 +6,9 @@ export default class NotFound extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this)
   }
+  componentWillMount(){
+    window.scroll(null,0)
+  }
   componentDidMount(){
     const { fetchProject } = this.props.actions
     const id = this.props.params.id
@@ -22,7 +25,9 @@ export default class NotFound extends Component {
         <div className="detail">
           <div className="detail-title">{data.name}</div>
           <div className="item-info">{data.introduction}</div>
-          <div className="info-card">{data.description}</div>
+          <div className="info-card-box">
+            <div className="info-card">{data.description}</div>
+          </div>
         </div>
         {
           data.products && data.products.map((item,index) => {

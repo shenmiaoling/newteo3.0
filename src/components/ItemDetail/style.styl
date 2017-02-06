@@ -1,6 +1,7 @@
 .detail
 	padding 95px 23px 71px 23px
 	background-color rgb( 255, 111, 0)
+.info-card-box
 	position relative
 .detail .detail-title
 	text-align center
@@ -20,7 +21,7 @@
 	line-height 18px
 	color rgba( 0, 0, 0, 0.54)
 	position absolute
-	top 85%
+	top 31px
 	left 5%
 	right 5%
 .detail-status
@@ -80,7 +81,7 @@
 	background:rgba(0,0,0,0.49);
 .tips-container
 	background-color white
-	width: 80%;
+	width: 74%;
 	display: block;
 	margin: 0 auto;
 	border-radius 10px
@@ -99,4 +100,15 @@
 	font-size 24px
 	padding-top 29px
 	padding-bottom 39px
-
+@media(max-width: 768px)
+	.tips-top
+		line-height 52px
+	.tips-txt
+		padding-top: 57px;
+		padding-bottom: 60px;
+@media(max-width: 480px)
+	.tips-top
+		line-height 32px
+	.tips-txt
+		padding-top: 29px;
+		padding-bottom: 39px;
