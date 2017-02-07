@@ -53,7 +53,7 @@ export default class Home extends Component {
             </div>
           </div>
           <ProjectList actions={actions} projects={projects}/>
-          <ContactForm  actions={actions} requirement={requirement}/>
+          <ContactForm  actions={actions} requirement={requirement} tips={tips}/>
         </div>
     )
   }

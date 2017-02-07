@@ -100,7 +100,6 @@ export function fetchRequirement(api,data) {
             })
           }).then(response => response.json())
             .then(json => {
-              console.log(json);
               if (json) {
                 dispatch(fetchRequirementSuccess(true))
               }else{
