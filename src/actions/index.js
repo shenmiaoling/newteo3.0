@@ -84,7 +84,6 @@ function fetchRequirementFailure(err) {
   }
 }
 export function fetchRequirement(api,data) {
-  console.log(data.name)
   return dispatch => {
     dispatch(fetchRequirementRequest())
     return fetch(api, {

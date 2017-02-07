@@ -17,10 +17,10 @@ describe('fetchRequirement action', () => {
   //       }, 500);
   //   });
   it('Get projects should sucess with correctly api', () => {
-    const mockUser = {"name":"testname","phone":"15913020380","company":"teststring","info":"teststring"}
+    const mockUser = {name:"testname",phone:"13535654520",company:"teststring",info:"teststring"}
     const store = mockStore({})
 
-    return  store.dispatch(fetchRequirement(`${API_URL}/requirement/token=newteo3.0`,mockUser))
+    return  store.dispatch(fetchRequirement(`${API_URL}/requirement?token=newteo3.0`,mockUser))
       .then(() => {
         expect(store.getActions()[1].type).toEqual('FETCH_REQUIREMENT_SUCCESS')
       })
