@@ -1,24 +1,28 @@
 
 import { fetchRequirement } from '../../src/actions'
 import { API_URL } from '../../constant'
-
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
+// import * as types from '../../src/ActionTypes'
+// import nock from 'nock'
 
 const middlewares = [thunk]
 const mockStore = configureStore(middlewares)
 
 describe('fetchRequirement action', () => {
-  it('Post requirement should sucess with correctly api', () => {
-    const expectedActions = [
-        { type: type.FETCH_REQUIREMENT_REQUEST },
-        { type: type.FETCH_REQUIREMENT_SUCCESS,
-          body: {name:"teststring",phone:"13568225380",company:"teststring",info:"teststring"}
-        }]
+  // beforeEach(function (done) {
+  //       window.jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+  //       setTimeout(function () {
+  //           done();
+  //       }, 500);
+  //   });
+  it('Get projects should sucess with correctly api', () => {
+    const mockUser = {"name":"testname","phone":"15913020380","company":"teststring","info":"teststring"}
     const store = mockStore({})
-    return  store.dispatch(fetchRequirement(`${API_URL}/requirement`))
+
+    return  store.dispatch(fetchRequirement(`${API_URL}/requirement/token=newteo3.0`,mockUser))
       .then(() => {
-        expect(store.getActions()).toEqual(expectedActions)
+        expect(store.getActions()[1].type).toEqual('FETCH_REQUIREMENT_SUCCESS')
       })
   })
 })

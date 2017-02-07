@@ -1,6 +1,6 @@
 import React,{ Component } from 'react'
-import { Link } from 'react-router'
-import "./style.styl"
+import { IndexLink, Link } from 'react-router'
+require("./style.styl")
 export default class Topbar extends Component {
     constructor(props) {
     super(props);
@@ -18,10 +18,10 @@ export default class Topbar extends Component {
     return (
       <div className="topbar">
         <div>
-        <Link to="/home">
+        <IndexLink to="/">
           <img src="/images/logo.png" className="logo"></img>
           <span className="title">新潮科技</span>
-        </Link>
+        </IndexLink>
         <div className="menu-icon">
           <span className="iconfont icon-toggle-left" onClick={this.handleClick}></span>
         </div>
@@ -31,7 +31,7 @@ export default class Topbar extends Component {
           <div id="slide-icon"><span className="iconfont icon-toggle-button" onClick={this.handleClick}></span></div>
           </div>
           <div className="menu-title">
-          <Link to="/home"><div className={this.props.location.pathname=="/home" || this.props.location.pathname=="/"?"activeStyle":""} onClick={this.hideMenu}>首页</div></Link>
+          <IndexLink to="/"><div className={this.props.location.pathname=="/"?"activeStyle":""} onClick={this.hideMenu}>首页</div></IndexLink>
           <Link to="/about"><div  className={this.props.location.pathname=="/about"?"activeStyle":""} onClick={this.hideMenu}>关于我们</div></Link>
           <Link to="/rule"><div  className={this.props.location.pathname=="/rule"?"activeStyle":""} onClick={this.hideMenu}>合作条款</div></Link>
           </div>

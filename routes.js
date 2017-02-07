@@ -50,10 +50,8 @@ const NotFound = (location, callback) => {
 };
 
 export default (
-  <Route>
     <Route path="/" component={App}>
       <IndexRoute getComponent={Home} />
-      <Route path="/home" getComponent={Home} />
       <Route path="/about" getComponent={AboutUs} />
       <Route path="/serverintro" getComponent={ServerIntro} />
       <Route path="/servercategy" getComponent={ServerCategy} />
@@ -63,5 +61,4 @@ export default (
       <Route path="/rule" getComponent={Rule} />
       <Route path="*" getComponent={NotFound} />
     </Route>
-  </Route>
 )
