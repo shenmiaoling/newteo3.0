@@ -71,7 +71,7 @@ function fetchRequirementRequest() {
     type: 'FETCH_REQUIREMENT_REQUEST'
   }
 }
-function fetchRequirementSuccess(end) {
+export function fetchRequirementSuccess(end) {
   return {
     type:'FETCH_REQUIREMENT_SUCCESS',
     end: end

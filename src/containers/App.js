@@ -9,20 +9,12 @@ class App extends React.Component {
     super(props);
   }
   render(){
-    const { children,actions,tips,location,sideBar,projects,project,requirement } = this.props
+    const { children,sideBar,actions,...OtherProps} = this.props
     return (
       <div>
         <Topbar location={location} sideBar={sideBar} actions={actions}/>
       {
-          children && React.cloneElement(children, {
-            actions: actions,
-            tips: tips,
-            location: location,
-            sideBar: sideBar,
-            projects: projects,
-            project: project,
-            requirement: requirement
-          })
+          children && React.cloneElement(children, {...OtherProps,actions,sideBar})
         }
         <Footer/>
       </div>
