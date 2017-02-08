@@ -4,38 +4,38 @@ import requirement from '../../src/reducers/requirement'
 let InitState =
 {
   status:'',
-  data: [],
-  errMsg: ''
+  errMsg: '',
+  end: false
 }
 
 describe('requirement reducer', () => {
   it('should return the initial state', () => {
     expect(requirement(undefined, {})).toEqual(InitState)
   })
-  it('should handle FETCH_PROJECT_LIST_REQUEST', () => {
+  it('should handle FETCH_REQUIREMENT_REQUEST', () => {
     expect(
       requirement([], {
-      type: 'FETCH_PROJECT_LIST_REQUEST'
+      type: 'FETCH_REQUIREMENT_REQUEST'
     })
     ).toEqual({
       status:'fetch_start',
     })
   })
-  it('should handle FETCH_PROJECT_LIST_SUCCESS', () => {
+  it('should handle FETCH_REQUIREMENT_SUCCESS', () => {
     expect(
       requirement([], {
-      type: 'FETCH_PROJECT_LIST_SUCCESS',
-      ProjectList: 'hello'
+      type: 'FETCH_REQUIREMENT_SUCCESS',
+      end: true
     })
     ).toEqual({
       status:'fetch_success',
-      data: 'hello'
+      end: true
     })
   })
-  it('should handle FETCH_PROJECT_LIST_FAILURE', () => {
+  it('should handle FETCH_REQUIREMENT_FAILURE', () => {
     expect(
       requirement([], {
-      type: 'FETCH_PROJECT_LIST_FAILURE',
+      type: 'FETCH_REQUIREMENT_FAILURE',
       err: 'oops'
     })
     ).toEqual({

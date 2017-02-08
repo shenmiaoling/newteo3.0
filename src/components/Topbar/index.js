@@ -1,6 +1,6 @@
 import React,{ Component } from 'react'
 import { IndexLink, Link } from 'react-router'
-require("./style.styl")
+// require("./style.styl")
 export default class Topbar extends Component {
     constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ export default class Topbar extends Component {
     const {sideBar} = this.props
     return (
       <div className="topbar">
-        <div>
+        <div className="topbar-contain">
         <IndexLink to="/">
           <img src="/images/logo.png" className="logo"></img>
           <span className="title">新潮科技</span>

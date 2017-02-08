@@ -1,5 +1,5 @@
 import React , { Component }from 'react'
-import './style.styl'
+// import './style.styl'
 import {API_URL} from '../../../constant'
 export default class NotFound extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ export default class NotFound extends Component {
     const {data} = this.props.project
     const {tips} = this.props
     return (
-      <div>
+      <div className="detail-card">
         <div className="detail">
           <div className="detail-title">{data.name}</div>
           <div className="item-info">{data.introduction}</div>
@@ -29,6 +29,7 @@ export default class NotFound extends Component {
             <div className="info-card">{data.description}</div>
           </div>
         </div>
+        <div>
         {
           data.products && data.products.map((item,index) => {
             return <div key={index}>
@@ -43,6 +44,7 @@ export default class NotFound extends Component {
             </div>
           })
         }
+        </div>
         <div className="show-tips" onClick={this.handleClick} style={{display:tips?"block":"none"}}>
           <div className="tips-container">
             <div className="tips-top">提示</div>

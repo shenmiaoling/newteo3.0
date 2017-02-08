@@ -4,7 +4,7 @@ import {API_URL} from '../../../constant'
 import validateContact from './validateContact'
 import { Field, Form, Control} from 'react-redux-form';
 import { connect } from 'react-redux';
-import './style.styl'
+// require('./style.styl')
  class ContactForm extends Component {
   constructor(props) {
     super(props);
