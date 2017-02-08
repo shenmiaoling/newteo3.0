@@ -1,4 +1,4 @@
-//注释掉require('./style')才可以运行
+
 import ItemDetail from '../../src/components/ItemDetail'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -12,11 +12,11 @@ function setup(propOverrides) {
         introduction:"introduction text...",
         description:"description text...",
         products:[
-        {
-          img:[{img_url:'img_url'}],
-          title:"title",
-          online: false
-        }
+          {
+            img:[{img_url:'img_url'}],
+            title:"title",
+            online: true
+          }
         ]
       }
     },
@@ -44,21 +44,16 @@ describe('ItemDetail component', () => {
     const Title = output.props.children[0]
     const Context = output.props.children[1]
     const Tips = output.props.children[2]
-    console.log(Tips)
+    const card = Context.props.children[0].props.children.props.children[1]
+    const status = card.props.children[1].props.children
+
     expect(Title.props.children[0].props.children).toEqual('name text')
+
     expect(Title.props.children[1].props.children).toEqual('introduction text...')
     const Description = Title.props.children[2].props.children
+
     expect(Description.props.children).toEqual('description text...')
-    // const Card = Link.props.children
-    // const CardTitle = Card.props.children[0]
-    // const CardMedia = Card.props.children[1]
-    // const CardText  = Card.props.children[2]
 
-    // expect(CardTitle.props.title).toEqual('this is article title')
-    // expect(CardTitle.props.subtitle).toEqual('author')
-
-    // expect(CardMedia.props.children.props.src).toEqual('cover url')
-    // expect(CardText.props.children).toEqual('some text')
-
+    expect(status.props.className).toEqual('card-btn')
   })
 })

@@ -1,6 +1,6 @@
 import React,{ Component } from 'react'
 import { IndexLink, Link } from 'react-router'
-// require("./style.styl")
+require("./style.styl")
 export default class Topbar extends Component {
     constructor(props) {
     super(props);

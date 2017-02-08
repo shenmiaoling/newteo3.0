@@ -1,5 +1,5 @@
 import React , { Component }from 'react'
-// import './style.styl'
+import './style.styl'
 import {API_URL} from '../../../constant'
 export default class NotFound extends Component {
   constructor(props) {

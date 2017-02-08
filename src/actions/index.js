@@ -110,11 +110,11 @@ export function fetchRequirement(api,data) {
       })
   }
 }
-export function handleTips(){
-  return {
-    type: 'CLICK_TIPS'
-  }
-}
+// export function handleTips(){
+//   return {
+//     type: 'CLICK_TIPS'
+//   }
+// }
 export function handleMenu(){
   return {
     type: 'CLICK_MENU'

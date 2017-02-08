@@ -5,7 +5,7 @@
   "moduleNameMapper": {
     "^react": "<rootDir>/vendor/react-master",
     "^config$": "<rootDir>/configs/app-config.js",
-    "^.+\\.(css|sass|styl)$": "<rootDir>/test/styleMock.js",
-    "^.+\\.(gif|png|jpg|svg)$": "<rootDir>/test/fileMock.js"
+    "^.+\\.(css|sass|styl)$": "<rootDir>/mock/styleMock.js",
+    "^.+\\.(gif|png|jpg|svg)$": "<rootDir>/mock/fileMock.js"
   }
 }

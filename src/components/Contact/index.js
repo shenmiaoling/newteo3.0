@@ -4,7 +4,7 @@ import {API_URL} from '../../../constant'
 import validateContact from './validateContact'
 import { Field, Form, Control} from 'react-redux-form';
 import { connect } from 'react-redux';
-// require('./style.styl')
+require('./style.styl')
  class ContactForm extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +26,6 @@ import { connect } from 'react-redux';
   render() {
     let { requirement } = this.props;
     const end = requirement.end
-    const {tips} = this.props
     return (
           <div className="contact" id="here">
             <div className="contact-title">联系我们</div>

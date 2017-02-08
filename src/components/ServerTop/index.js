@@ -29,10 +29,10 @@ export default class NotFound extends Component {
             <div className="category-txt">联系我们</div>
           </div>
         </Link>
-      	
+
 			</div>
     </div>
-      
+
     )
   }
 }
