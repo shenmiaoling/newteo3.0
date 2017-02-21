@@ -6,9 +6,9 @@ export default class NotFound extends Component {
     return (
       <div>
       	<ServerTop/>
-      	<div className="category">
+      	<div className="categorys category-contain">
       		<div className="intro-title">我们提供三种套餐，<div>总有一款适合你</div></div>
-      		
+
           <div className="intro-contain">
             <table className="gridtable">
               <tbody>
@@ -40,7 +40,7 @@ export default class NotFound extends Component {
                 <td>配套工具</td><td colSpan="3">为提高服务质量，我们开发了“小桥梁”</td>
               </tr>
               </tbody>
-            </table>    		
+            </table>
       	</div>
         <div className="remarks">
           <div>补充说明</div>
